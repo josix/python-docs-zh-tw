@@ -93,8 +93,8 @@ msgstr "報告在程式正常操作期間發生的事件（例如用於狀態監
 msgid ""
 ":func:`logging.info` (or :func:`logging.debug` for very detailed output for "
 "diagnostic purposes)"
-msgstr ":func:`logging.info`（用於一般輸出）（或者 :func:`logging."
-"debug`（用於診斷目的的非常詳細的輸出））"
+msgstr ":func:`logging.info` （用於一般輸出）（或者 :func:`logging."
+"debug` （用於診斷目的的非常詳細的輸出））"
 
 #: ../../howto/logging.rst:42
 msgid "Issue a warning regarding a particular runtime event"
@@ -397,7 +397,7 @@ msgid ""
 msgstr ""
 "正如您所看到的，將變量數據合併到事件描述消息中使用的是舊的 `%` "
 "樣式的字符串格式化方式。這是出於向後兼容，logging "
-"包的發布日期先於新的格式化選項，如 `str.format` 方法和 `string.Template` "
+"包的發布日期先於新的格式化選項，如 :meth:`str.format` 方法和 :class:`string.Template` "
 "類別。雖然支援這些新的格式化選項，但是探索這些選項超出了本教程的範圍：請參閱 "
 ":ref:`formatting-styles` 獲取更多信息。"
 
@@ -426,7 +426,7 @@ msgid ""
 msgstr ""
 "需要注意的是，前面範例中出現的'root'已經消失。對於可以出現在格式字串中的完整"
 "內容，您可以參閱 :ref:`logrecord-attributes` 的文件，簡單的使用方法是，"
-"只使用 *levelname*（嚴重性）、*message*（事件描述，包括變數的值）和可能的顯示"
+"只使用 *levelname* （嚴重性）、*message* （事件描述，包括變數的值）和可能的顯示"
 "事件發生時間。下一個段落會解釋這個。"
 
 #: ../../howto/logging.rst:294
@@ -509,7 +509,7 @@ msgid ""
 "slightly more advanced/in-depth tutorial than the basic one above. After "
 "that, you can take a look at the :ref:`logging-cookbook`."
 msgstr "還在嗎？你可以繼續閱讀下面幾節，這比上面的基礎教學稍微進階/深入一些。之後，你"
-"可以看看:ref:logging-cookbook。"
+"可以看看 :ref:`logging-cookbook`。"
 
 #: ../../howto/logging.rst:350
 msgid "Advanced Logging Tutorial"
@@ -548,8 +548,8 @@ msgid ""
 "Log event information is passed between loggers, handlers, filters and "
 "formatters in a :class:`LogRecord` instance."
 msgstr ""
-"Log Event 信息在loggers、handlers、 filters 和formatters 之間通過:class:"
-"LogRecord 實例傳遞。"
+"Log Event 信息在loggers、handlers、filters和formatters之間通過"
+" :class:`LogRecord` 實例傳遞。"
 
 #: ../../howto/logging.rst:365
 msgid ""
