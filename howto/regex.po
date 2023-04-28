@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Python 3.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
-"PO-Revision-Date: 2023-04-01 13:31+0000\n"
-"Last-Translator: raymond <raymond727341@gmail.com>\n"
+"PO-Revision-Date: 2023-04-29 13:31+0000\n"
+"Last-Translator: 鍾禕宸 <eason.chung9@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -1252,12 +1252,10 @@ msgstr "舉例來說，這是一個使用 :const:`re.VERBOSE` "
 "的正規表示式；看起來容易閱讀許多了吧？::"
 
 #: ../../howto/regex.rst:660
-#, fuzzy
 msgid "Without the verbose setting, the RE would look like this::"
-msgstr "如果不啟用冗長模式，正規表示式會長這樣：:"
+msgstr "如果不啟用冗長模式，正規表示式(RE)會長這樣::"
 
 #: ../../howto/regex.rst:666
-#, fuzzy
 msgid ""
 "In the above example, Python's automatic concatenation of string literals "
 "has been used to break up the RE into smaller pieces, but it's still more "
@@ -1267,12 +1265,10 @@ msgstr ""
 "拆成較小的片段，但仍比使用 :const:`re.VERBOSE` 更難理解。"
 
 #: ../../howto/regex.rst:672
-#, fuzzy
 msgid "More Pattern Power"
-msgstr "更強大的模式綜合利用"
+msgstr "更強的模式利用"
 
 #: ../../howto/regex.rst:674
-#, fuzzy
 msgid ""
 "So far we've only covered a part of the features of regular expressions.  In "
 "this section, we'll cover some new metacharacters, and how to use groups to "
@@ -1281,19 +1277,16 @@ msgstr "迄今為止，我們只涵蓋了正規表達式部分功能。在本節
 "和如何使用群組檢索匹配文本的部分。"
 
 #: ../../howto/regex.rst:682
-#, fuzzy
 msgid "More Metacharacters"
 msgstr "更多元字符"
 
 #: ../../howto/regex.rst:684
-#, fuzzy
 msgid ""
 "There are some metacharacters that we haven't covered yet.  Most of them "
 "will be covered in this section."
 msgstr "本節將介紹一些我們還沒有涉及的元字符。其中大部分會在本節中詳加說明。"
 
 #: ../../howto/regex.rst:687
-#, fuzzy
 msgid ""
 "Some of the remaining metacharacters to be discussed are :dfn:`zero-width "
 "assertions`.  They don't cause the engine to advance through the string; "
@@ -1305,16 +1298,16 @@ msgid ""
 "of times."
 msgstr ""
 "還有一些其它的元字符待討論，稱為「零寬斷言(zero-width assertions)」。它們並不"
-"會使引擎在字串中前進；取而代之的是，它們根本沒有消耗任何字元，僅是成功或失敗"
-"。例如，“\\b”表示當前位置位於單詞邊界上；該位置完全未被“\\b”所改變。因此，絕"
-"不能重複使用零寬斷言，因為如果在某個位置匹配一次，顯然可以無限次地匹配。"
+"會使引擎在字串中前進；反之，它們根本沒有消耗任何字元，僅是成功或失敗。例如， "
+"`` \\b `` 表示當前位置位於單詞邊界上；該位置完全未被 `` \\b `` 所改變。因此，"
+"這代表零寬斷言絕不能被重複，一旦它們在某個位置匹配成功，那麼它們就可以在這個"
+"位置無限次地匹配了。"
 
 #: ../../howto/regex.rst:703
 msgid "``|``"
 msgstr "``|``"
 
 #: ../../howto/regex.rst:696
-#, fuzzy
 msgid ""
 "Alternation, or the \"or\" operator.   If *A* and *B* are regular "
 "expressions, ``A|B`` will match any string that matches either *A* or *B*. "
@@ -1323,74 +1316,68 @@ msgid ""
 "``'Crow'`` or ``'Servo'``, not ``'Cro'``, a ``'w'`` or an ``'S'``, and "
 "``'ervo'``."
 msgstr ""
-"交替運算，或者「或」的操作符。如果 *A* 和 *B* 是正規表示式, ``A|B`` "
-"會匹配所有同時符合*A* 或 *B* "
-"的字符組成之字串。為了讓多個字符的交替工作得更理性化，``|`` 符號極低優先級。"
-"因此 ``Crow|Servo`` 可以匹配到=>'Crow' 或 'Servo' ，而不是 "
-"'Cro'、'w'、大寫'S'、及 'ervo\"。"
+"交替運算，或者「或」的運算子。如果 *A* 和 *B* 是正規表示式, ``A|B`` "
+"將匹配符合 *A* 或 *B* 的字符組成之字串。由於需要在多個字元字串間交替，因此 "
+"``|`` 具有非常低的優先級，以確保正確性。因此 ``Crow|Servo`` 可以匹配到 "
+"``'Crow'`` 或 ``'Servo'`` ，而不是 ``'Cro'``、``'w'``、大寫 ``'S'`` 、及 "
+"``'ervo'`` 。"
 
 #: ../../howto/regex.rst:702
-#, fuzzy
 msgid ""
 "To match a literal ``'|'``, use ``\\|``, or enclose it inside a character "
 "class, as in ``[|]``."
-msgstr "要匹配文字中的「|」，可以使用反斜線加上符號\"\\|\"，或是將它放入字元組中，"
-"例如\"[|]\"。"
+msgstr "若要匹配文字中的 ``|`` ，可以使用反斜線加上符號 ``\\|`` "
+"，或是將它放入字元組中，例如 ``[|]`` 。"
 
 #: ../../howto/regex.rst:718
 msgid "``^``"
 msgstr "``^``"
 
 #: ../../howto/regex.rst:706
-#, fuzzy
 msgid ""
 "Matches at the beginning of lines.  Unless the :const:`MULTILINE` flag has "
 "been set, this will only match at the beginning of the string.  In :const:"
 "`MULTILINE` mode, this also matches immediately after each newline within "
 "the string."
 msgstr ""
-"從每一行的開頭開始找尋符合的內容。除非設定了 :const:`MULTILINE` "
-"標誌，否則只會在字串開頭進行匹配。在 :const:`MULTILINE` "
-"狀態下，也會立即經過字串中每個換行符號後進行匹配。"
+"從每一行的開頭開始配對。除非已經設定了 :const:`MULTILINE` "
+"標誌，否則只會在字串開頭進行匹配。在 :const:MULTILINE "
+"模式下，它還會立即匹配字串中每個換行符之後的位置。"
 
 #: ../../howto/regex.rst:710
-#, fuzzy
 msgid ""
 "For example, if you wish to match the word ``From`` only at the beginning of "
 "a line, the RE to use is ``^From``. ::"
-msgstr "例如，如果你希望只在行首匹配單詞「`From`」，要使用的正則表達式是「``^From``」"
+msgstr "例如，如果你希望只在行首匹配單詞 ``From`` ，則要使用的正規表達式是 ``^From`` "
 "。::"
 
 #: ../../howto/regex.rst:718
-#, fuzzy
 msgid "To match a literal ``'^'``, use ``\\^``."
-msgstr "為了符合文字字面上的「^」，使用反斜線「\\」來表示，因此表達成 「\\^」。"
+msgstr "為了匹配到 ``^`` ，使用 ``\\^`` 。"
 
 #: ../../howto/regex.rst:732
 msgid "``$``"
 msgstr "``$``"
 
 #: ../../howto/regex.rst:721
-#, fuzzy
 msgid ""
 "Matches at the end of a line, which is defined as either the end of the "
 "string, or any location followed by a newline character.     ::"
-msgstr "與一行的結尾匹配，其定義為字串的結尾或是接在換行符號之後的任何位置。::(注意："
-"句中 :: 符號應保留rst格式)"
+msgstr "在行末進行匹配，其定義可以是字串的結尾，也可以是任何後面跟著換行符的位置。。:"
+":"
 
 #: ../../howto/regex.rst:731
-#, fuzzy
 msgid ""
 "To match a literal ``'$'``, use ``\\$`` or enclose it inside a character "
 "class, as in  ``[$]``."
-msgstr "為了匹配字面上的 ``'$'``，請使用 ``\\$`` 或將其包含在字符類中，例如 ``[$]``。"
+msgstr "為了匹配字面上的 ``'$'``，請使用 ``\\$`` 或將其包含在字符類中，例如 ``[$]`` "
+"。"
 
 #: ../../howto/regex.rst:738
 msgid "``\\A``"
 msgstr "``\\A``"
 
 #: ../../howto/regex.rst:735
-#, fuzzy
 msgid ""
 "Matches only at the start of the string.  When not in :const:`MULTILINE` "
 "mode, ``\\A`` and ``^`` are effectively the same.  In :const:`MULTILINE` "
@@ -1399,8 +1386,8 @@ msgid ""
 "newline character."
 msgstr ""
 "僅能在字串的開頭進行匹配。若未啟用 :const:`MULTILINE` 模式，``\\A`` 與 ``^`` "
-"其實表示相同意義；然而，在 :const:`MULTILINE` 模式下，它們有所不同：``\\A`` "
-"仍舊只會匹配到字串的起始位置，但是 ``^`` "
+"的效果基本相同。在 :const:`MULTILINE` 模式下，它們並不一樣：``\\A`` "
+"仍舊只會在字串的起始位置匹配，但是 ``^`` "
 "則可以通過換行符後面的任何位置進行匹配。"
 
 #: ../../howto/regex.rst:741
