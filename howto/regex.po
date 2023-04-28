@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-04-29 13:31+0000\n"
-"Last-Translator: andyjjrt <andyjjrt@gmail.com>\n"
+"Last-Translator: Josix <josixwang@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -1066,62 +1066,54 @@ msgid ":const:`ASCII`, :const:`A`"
 msgstr ":const:`ASCII`, :const:`A`"
 
 #: ../../howto/regex.rst:539
-#, fuzzy
 msgid ""
 "Makes several escapes like ``\\w``, ``\\b``, ``\\s`` and ``\\d`` match only "
 "on ASCII characters with the respective property."
-msgstr "會使``\\w``、``\\b``、``\\s`` 和 ``\\d"
-"``這幾種跳脫字元，只能匹配ASCII字符上該屬性的對應值。"
+msgstr "會使 ``\\w``、``\\b``、``\\s`` 和 ``\\d`` 這幾種跳脫字元只能匹配 ASCII "
+"字元上對應的值。"
 
 #: ../../howto/regex.rst:543
 msgid ":const:`DOTALL`, :const:`S`"
 msgstr ":const:`DOTALL`, :const:`S`"
 
 #: ../../howto/regex.rst:543
-#, fuzzy
 msgid "Make ``.`` match any character, including newlines."
-msgstr "讓「.」匹配任何字元，包括換行符號。"
+msgstr "讓 ``.`` 匹配任何字元，包括換行符號。"
 
 #: ../../howto/regex.rst:546
 msgid ":const:`IGNORECASE`, :const:`I`"
-msgstr ":const:`IGNORECASE`, :const:`I`"
+msgstr ":const:`IGNORECASE` , :const:`I`"
 
 #: ../../howto/regex.rst:546
-#, fuzzy
 msgid "Do case-insensitive matches."
 msgstr "進行不分大小寫的比對。"
 
 #: ../../howto/regex.rst:548
 msgid ":const:`LOCALE`, :const:`L`"
-msgstr ":const:`LOCALE`, :const:`L`"
+msgstr ":const:`LOCALE` , :const:`L`"
 
 #: ../../howto/regex.rst:548
-#, fuzzy
 msgid "Do a locale-aware match."
-msgstr "進行區域敏感字串比對。"
+msgstr "進行本地化感知字串比對。"
 
 #: ../../howto/regex.rst:550
 msgid ":const:`MULTILINE`, :const:`M`"
-msgstr ":const:`MULTILINE`, :const:`M`"
+msgstr ":const:`MULTILINE` , :const:`M`"
 
 #: ../../howto/regex.rst:550
-#, fuzzy
 msgid "Multi-line matching, affecting ``^`` and ``$``."
-msgstr "多行匹配，會影響到 ``^`` 和 ``$``。"
+msgstr "多行匹配，會影響到 ``^`` 和 ``$`` 。"
 
 #: ../../howto/regex.rst:553
-#, fuzzy
 msgid ":const:`VERBOSE`, :const:`X` (for 'extended')"
-msgstr "`:const:`VERBOSE``, ``:const:`X``（表示「擴展」）"
+msgstr "`:const:`VERBOSE`` , ``:const:`X``（表示「擴充」）"
 
 #: ../../howto/regex.rst:553
-#, fuzzy
 msgid ""
 "Enable verbose REs, which can be organized more cleanly and understandably."
 msgstr "啟用語意清晰且易於整理的冗長正規表示式（verbose REs）。"
 
 #: ../../howto/regex.rst:562
-#, fuzzy
 msgid ""
 "Perform case-insensitive matching; character class and literal strings will "
 "match letters by ignoring case.  For example, ``[A-Z]`` will match lowercase "
@@ -1136,24 +1128,26 @@ msgid ""
 "lowercasing doesn't take the current locale into account; it will if you "
 "also set the :const:`LOCALE` flag."
 msgstr ""
-"執行不分大小寫比對；字元類別和直接字串會忽略大小寫來比對，舉例來說，``[A-Z]``"
-"可以找到小寫字母。如果沒使用 :const:`ASCII` 旗標禁用非 ASCII 匹配的話，"
-"完整的 Unicode 比對也是有效的。而當 Unicode 的模式 ``[a-z]`` 或 ``[A-Z]`` 與 "
-":const:`IGNORECASE` 旗標一起使用時，它們會匹配52個 ASCII 字母以及另外4個非 "
-"ASCII 字母: 'İ' (U+0130, 土耳其大寫點I)，'ı' (U+0131, 土耳其小寫無點i)，'ſ' "
-"(U+017F, Latin small letter long s) 和 'K' (U+212A, Kelvin sign)。\"Spam\" "
-"可以被匹配為 ``'Spam'``, ``"
+"執行不分大小寫比對；字元類別和 literal "
+"字串會忽略大小寫來比對，舉例來說，``[A-Z]`` 可以找到小寫字母。如果沒使用 "
+":const:`ASCII` 標誌禁用非 ASCII 匹配的話，完整的 Unicode 比對也是有效的。"
+"而當 Unicode 的模式 ``[a-z]`` 或 ``[A-Z]`` 與 :const:`IGNORECASE` "
+"旗標一起使用時，它們會匹配 52 個 ASCII 字母以及另外 4 個非 ASCII 字母： 'İ' "
+"（U+0130, 拉丁大寫有點的 I），'ı' （U+0131, 拉丁小寫無點的 i），'ſ' （U+"
+"017F, 拉丁小寫長 s ) 和 'K' (U+212A, Kelvin 符號)。``Spam`` 將匹配 ``'Spam'``"
+" 、``'spam'`` 、 ``'spAM'`` 或 ``'ſpam'`` （後者僅在 Unicode "
+"模式下匹配）。這個小寫不考慮當前的語言環境；如果你也設置了 :const:LOCALE "
+"標誌，它將考慮這個因素。"
 
 #: ../../howto/regex.rst:580
-#, fuzzy
 msgid ""
 "Make ``\\w``, ``\\W``, ``\\b``, ``\\B`` and case-insensitive matching "
 "dependent on the current locale instead of the Unicode database."
-msgstr "將 `\\w`、`\\W`、`\\b`、`\\B` "
-"和不區分大小寫的比對方式改為依賴於當前語系(local)而非 Unicode 資料庫。"
+msgstr ""
+"將 ``\\w`` 、``\\W`` 、``\\b`` 、``\\B`` "
+"和不區分大小寫的比對方式改為依賴於當前語系（local）而非 Unicode 資料庫。"
 
 #: ../../howto/regex.rst:583
-#, fuzzy
 msgid ""
 "Locales are a feature of the C library intended to help in writing programs "
 "that take account of language differences.  For example, if you're "
@@ -1172,25 +1166,24 @@ msgid ""
 "patterns, and it is able to handle different locales/languages."
 msgstr ""
 "locale 是 C 函式庫的一個特色，旨在幫助撰寫具有考慮語言差異的程式。例如，如果"
-"要處理編碼成法文的文字，您可以使用 ``\\w+`` 來符合單字，但是在位元組（bytes）"
-"模式中只會符合字符類 [A-Za-z] 的 ``\\w``；它不會匹配對應於 é 或 ç "
-"的位元組。如果你的系統已正確配置並選定了法國區域設定(locale)，某些 C "
-"函數將告訴程序应将对于é相应的字节也视为字母。建議在編譯正則表示時设置 "
-":const:`LOCALE` 標志這将使得所生成編譯物件使用这些 C 函数来处理 ``\\w"
-"``；雖然較慢但能如預期般支持用於匹配法文單詞之錶達方式:  \\w+。Python3 "
-"不鼓勵使用此标识, 因为区域机制非常不可靠，而且一次仅处理一个“文化”，"
-"并且仅适用于8位本地语环境. Unicode 照常 (默认) 支援 Python3 序列(str)"
-"形式供Unicode使用, 能夠處理不同的Locale/ Language。"
+"要處理編碼成法文的文字，你可以使用 ``\\w+`` 來符合單字，但是在位元組（bytes）"
+"模式中只會符合字元類別 [A-Za-z] ；它不會匹配對應於 ``é`` 或 ``ç`` "
+"的位元組。如果你的系統已正確配置並選定了法國區域設定（locale），某些 C "
+"函式會告訴程式應將對應於 ``é`` 的位元組也應該被視為一個字母。"
+"建議在編譯正則表示時设置 :const:`LOCALE` 標志，"
+"這将使得所生成編譯物件使用这些 C 函式來處理 ``\\w`` "
+"；雖然較慢但能如預期般支援用於匹配法文單詞之表達方式: ``\\w+`` 。Python3 "
+"不鼓勵使用此標誌, 因为locale 機制非常不可靠，而且一次一次只處理一個“文化”，"
+"並且僅適用於 8 位元的語言環境。 Python3 預設支援 Unicode 匹配, "
+"並且能夠處理不同的地區/語言。"
 
 #: ../../howto/regex.rst:605
-#, fuzzy
 msgid ""
 "(``^`` and ``$`` haven't been explained yet;  they'll be introduced in "
 "section :ref:`more-metacharacters`.)"
 msgstr "(``^`` 和 ``$`` 尚未解釋，接下來將在 :ref:`more-metacharacters` 章節中介紹。)"
 
 #: ../../howto/regex.rst:608
-#, fuzzy
 msgid ""
 "Usually ``^`` matches only at the beginning of the string, and ``$`` matches "
 "only at the end of the string and immediately before the newline (if any) at "
@@ -1201,31 +1194,28 @@ msgid ""
 "(immediately preceding each newline)."
 msgstr ""
 "通常 ``^`` 會只比對字串一開始出現的位置，而 ``$`` 則會只比對字串結束和行末 "
-"(如果有) 的位置。 若指定此旗標時， ``^`` 不僅僅會比對字串開頭，也會在每個換行"
-"符號之後立即與下一行的內容做比對。同理地，元字符 ``$`` "
-"已可匹配到字符串或每行(BOL 或 EOL) 的结尾（EOL前一个任意且必须是换行符）。"
+"(如果有) 的位置。 若指定此標誌時， ``^`` 不僅僅會比對字串開頭，也會在每個換行"
+"符號之後立即與下一行的內容做比對。同樣的，元字符會匹配字串的結尾和每行的結尾"
+"（即每個換行符號之前）。"
 
 #: ../../howto/regex.rst:621
-#, fuzzy
 msgid ""
 "Makes the ``'.'`` special character match any character at all, including a "
 "newline; without this flag, ``'.'`` will match anything *except* a newline."
-msgstr "開啟 ``'.'`` 特殊字元，可匹配任何字符，包括換行；否則，``'.'`` "
-"會匹配除了換行之外的其 它所有字符。"
+msgstr "開啟 ``'.'`` 特殊字元可匹配任何字符，包括換行；否則，``'.'`` "
+"會匹配除了換行之外的其它所有字符。"
 
 #: ../../howto/regex.rst:629
-#, fuzzy
 msgid ""
 "Make ``\\w``, ``\\W``, ``\\b``, ``\\B``, ``\\s`` and ``\\S`` perform ASCII-"
 "only matching instead of full Unicode matching. This is only meaningful for "
 "Unicode patterns, and is ignored for byte patterns."
 msgstr ""
-"讓 ``\\w``, ``\\W``, ``\\b``, ``\\B``, ``\\s`` 和 ``\\S`` 僅進行 ASCII "
-"字元的比對，而非全字串 Unicode 範圍比對。此設置只在使用 Unicode "
-"的情況下有效，且不用於位元組型別式。"
+"讓 ``\\w`` , ``\\W`` , ``\\b`` , ``\\B`` , ``\\s`` 和 ``\\S`` 僅進行 ASCII "
+"字元的比對，而非全 Unicode 字串比對。此設置只在使用 Unicode "
+"的情況下有效，且不用於位元組樣式（Byte Patterns）。"
 
 #: ../../howto/regex.rst:638
-#, fuzzy
 msgid ""
 "This flag allows you to write regular expressions that are more readable by "
 "granting you more flexibility in how you can format them.  When this flag "
@@ -1236,14 +1226,13 @@ msgid ""
 "comments are marked by a ``'#'`` that's neither in a character class or "
 "preceded by an unescaped backslash."
 msgstr ""
-"這個旗標讓您更自由地編排和縮排正規表示式，使其更易讀。當設定此旗標後，除非空"
-"格在字元類別(class)中或是沒有轉移符(escape character)時否則都會被忽略。這能夠"
-"幫助您更清晰地整理和縮進正規表示式的內容。同時，它也允許您在 RE "
-"中添加被引擎忽略的註解；只要以 ``'#'`` "
-"開頭即可（不包括那些位於字元類別或前面已脫逸過的）。"
+"這個旗標讓你更自由地編排和縮排正規表示式，使其更易讀。當設定此旗標後，除非空"
+"格在字元類別（class）中或是沒有跳脫字元（escape character）時否則都會被忽略。"
+"這能夠幫助您更清晰地整理和縮排正規表示式的內容。同時，它也允許您在 RE "
+"中添加會被引擎忽略的註解；只要以 ``'#'`` "
+"開頭即可（不包括那些位於字元類別或前面有未跳脫的反斜線）。"
 
 #: ../../howto/regex.rst:647
-#, fuzzy
 msgid ""
 "For example, here's a RE that uses :const:`re.VERBOSE`; see how much easier "
 "it is to read? ::"
