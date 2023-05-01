@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Python 3.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
-"PO-Revision-Date: 2023-04-29 13:31+0000\n"
-"Last-Translator: Josix <josixwang@gmail.com>\n"
+"PO-Revision-Date: 2023-05-02 15:31+0000\n"
+"Last-Translator: raymond <raymond727341@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -775,7 +775,6 @@ msgid "``search()``"
 msgstr "``search()``"
 
 #: ../../howto/regex.rst:365
-#, fuzzy
 msgid "Scan through a string, looking for any location where this RE matches."
 msgstr "掃描字串，尋找任何符合正規表示式的位置。"
 
@@ -792,14 +791,12 @@ msgid "``finditer()``"
 msgstr "``finditer()``"
 
 #: ../../howto/regex.rst:371
-#, fuzzy
 msgid ""
 "Find all substrings where the RE matches, and returns them as an :term:"
 "`iterator`."
 msgstr "尋找所有符合正規表示式的子字串，並以 :term:`iterator` 形式回傳它們。"
 
 #: ../../howto/regex.rst:375
-#, fuzzy
 msgid ""
 ":meth:`~re.Pattern.match` and :meth:`~re.Pattern.search` return ``None`` if "
 "no match can be found.  If they're successful, a :ref:`match object <match-"
@@ -812,7 +809,6 @@ msgstr ""
 "匹配開始和結束位置、它所匹配的子字串等等。"
 
 #: ../../howto/regex.rst:380
-#, fuzzy
 msgid ""
 "You can learn about this by interactively experimenting with the :mod:`re` "
 "module.  If you have :mod:`tkinter` available, you may also want to look at :"
@@ -827,7 +823,6 @@ msgstr ""
 "正則表達式時，:file:`redemo.py` 可能非常實用。"
 
 #: ../../howto/regex.rst:387
-#, fuzzy
 msgid ""
 "This HOWTO uses the standard Python interpreter for its examples. First, run "
 "the Python interpreter, import the :mod:`re` module, and compile a RE::"
@@ -836,7 +831,6 @@ msgstr ""
 "``re`` 模組，並編譯一個正規表示式 (RE)："
 
 #: ../../howto/regex.rst:395
-#, fuzzy
 msgid ""
 "Now, you can try matching various strings against the RE ``[a-z]+``.  An "
 "empty string shouldn't match at all, since ``+`` means 'one or more "
@@ -844,15 +838,14 @@ msgid ""
 "which will cause the interpreter to print no output.  You can explicitly "
 "print the result of :meth:`!match` to make this clear. ::"
 msgstr ""
-"現在，你可以嘗試將各種字串與正規表示式 ``[a-z]+`` 進行匹配。由於 ``+`` 的含義"
-"是「出現一次或多次」，因此空字串應該根本沒有匹配。這種情況下，:meth:`~re."
+"現在，你可以嘗試將各種字串與正規表示式 ``[a-z]+`` 進行匹配。因為 ``+`` "
+"的含義是「出現一次或多次」，所以空字串應該沒有匹配。這種情況下，:meth:`~re."
 "Pattern.match` 應返回 ``None`` ，進解譯器不會輸出任何內容。您可以明確地打印 "
 ":meth:`!match` 的結果以使其清楚明白。.. code-block:: python     import re   "
 "pattern = re.compile(r'[a-z]+')   match_object = pattern.match('')     # The "
 "output of `print(match_object)` is None"
 
 #: ../../howto/regex.rst:405
-#, fuzzy
 msgid ""
 "Now, let's try it on a string that it should match, such as ``tempo``.  In "
 "this case, :meth:`~re.Pattern.match` will return a :ref:`match object <match-"
@@ -863,7 +856,6 @@ msgstr ""
 "objects>`，所以您應當將結果存入變數中以供後續使用。::"
 
 #: ../../howto/regex.rst:413
-#, fuzzy
 msgid ""
 "Now you can query the :ref:`match object <match-objects>` for information "
 "about the matching string.  Match object instances also have several methods "
@@ -877,7 +869,6 @@ msgid "``group()``"
 msgstr "``group()``"
 
 #: ../../howto/regex.rst:420
-#, fuzzy
 msgid "Return the string matched by the RE"
 msgstr "回傳正規表示式 (RE) 所匹配的字串。"
 
@@ -886,16 +877,14 @@ msgid "``start()``"
 msgstr "``start()``"
 
 #: ../../howto/regex.rst:422
-#, fuzzy
 msgid "Return the starting position of the match"
-msgstr "傳回符合項目的起始位置"
+msgstr "傳回匹配項目的起始位置"
 
 #: ../../howto/regex.rst:424
 msgid "``end()``"
 msgstr "``end()``"
 
 #: ../../howto/regex.rst:424
-#, fuzzy
 msgid "Return the ending position of the match"
 msgstr "傳回匹配項目結束的位置"
 
@@ -904,17 +893,14 @@ msgid "``span()``"
 msgstr "``span()``"
 
 #: ../../howto/regex.rst:426
-#, fuzzy
 msgid "Return a tuple containing the (start, end) positions  of the match"
 msgstr "回傳一個包含匹配位置 (起始，結束) 的元組"
 
 #: ../../howto/regex.rst:430
-#, fuzzy
 msgid "Trying these methods will soon clarify their meaning::"
-msgstr "嘗試這些方法很快就會澄清它們的意思："
+msgstr "嘗試這些方法能快速理解它們的意思："
 
 #: ../../howto/regex.rst:439
-#, fuzzy
 msgid ""
 ":meth:`~re.Match.group` returns the substring that was matched by the RE.  :"
 "meth:`~re.Match.start` and :meth:`~re.Match.end` return the starting and "
@@ -929,11 +915,10 @@ msgstr ""
 ".start` 和 :meth:`~re.Match.end` 方法分別返回匹配開始和結束的索引，而 "
 ":meth:`~re.Match.span` 會一次性返回起始和結束位置。 因為:meth:`~re.Pattern."
 "match`方法只是檢查 RE 是否從字符串開頭進行匹配，所以:meth:`!start` "
-"總是等於零。 但是，在模式使用的:meth:`~re.Pattern."
+"總是等於零。 然而，在模式使用的:meth:`~re.Pattern."
 "search`方法中，掃描整個字符串時匹配可能不從零位置開始。 ::"
 
 #: ../../howto/regex.rst:456
-#, fuzzy
 msgid ""
 "In actual programs, the most common style is to store the :ref:`match object "
 "<match-objects>` in a variable, and then check if it was ``None``.  This "
@@ -943,7 +928,6 @@ msgstr ""
 "存儲在一個變量中，然後檢查它是否為 ``None``。通常看起來像這樣："
 
 #: ../../howto/regex.rst:467
-#, fuzzy
 msgid ""
 "Two pattern methods return all of the matches for a pattern. :meth:`~re."
 "Pattern.findall` returns a list of matching strings::"
@@ -951,7 +935,6 @@ msgstr "兩種模式方法可返回符合樣式的所有結果。 :meth:`~re.Pat
 "返回匹配字串列表："
 
 #: ../../howto/regex.rst:474
-#, fuzzy
 msgid ""
 "The ``r`` prefix, making the literal a raw string literal, is needed in this "
 "example because escape sequences in a normal \"cooked\" string literal that "
@@ -962,11 +945,10 @@ msgstr ""
 "在此例子中，必須使用``r``前綴來將字面值變成一個原始字串文字(r raw string "
 "literal)，因為在正常的 \"cooked\" "
 "字串文字中轉義字元如果不被Python識別（相較於正則表達式），現在會產生 "
-":exc:`DeprecationWarning` 錯誤訊息並最終成為 :exc:`SyntaxError`. 觀看 :ref"
-":`the-backslash-plague`."
+":exc:`DeprecationWarning` 錯誤訊息並最終成為 :exc:`SyntaxError。 請見 :ref"
+":`the-backslash-plague`。"
 
 #: ../../howto/regex.rst:480
-#, fuzzy
 msgid ""
 ":meth:`~re.Pattern.findall` has to create the entire list before it can be "
 "returned as the result.  The :meth:`~re.Pattern.finditer` method returns a "
@@ -978,7 +960,6 @@ msgstr ""
 "objects>`實例："
 
 #: ../../howto/regex.rst:496
-#, fuzzy
 msgid "Module-Level Functions"
 msgstr "模組級函式"
 
@@ -999,7 +980,6 @@ msgstr ""
 " 實例。 ::"
 
 #: ../../howto/regex.rst:510
-#, fuzzy
 msgid ""
 "Under the hood, these functions simply create a pattern object for you and "
 "call the appropriate method on it.  They also store the compiled object in a "
@@ -1010,23 +990,21 @@ msgstr ""
 "譯的物件儲存在快取中，因此未來使用相同的正規表示式時不需要再次解析模式。"
 
 #: ../../howto/regex.rst:515
-#, fuzzy
 msgid ""
 "Should you use these module-level functions, or should you get the pattern "
 "and call its methods yourself?  If you're accessing a regex within a loop, "
 "pre-compiling it will save a few function calls. Outside of loops, there's "
 "not much difference thanks to the internal cache."
 msgstr ""
-"如果您正在迴圈中存取正規表示式，事前編譯可以減少一些函數呼叫。在迴圈外部由於"
-"內部快取的原因，使用這些模組級別函數和直接調用它的方法沒有太大區別。"
+"你應該使用這些模組級函數，還是取得模式並自己呼叫？如果您正在迴圈中存取正規表"
+"示式，事前編譯可以減少一些函數呼叫。在迴圈外部由於內部快取的原因，使用這些模"
+"組級別函數和直接調用它的方法沒有太大區別。"
 
 #: ../../howto/regex.rst:523
-#, fuzzy
 msgid "Compilation Flags"
-msgstr "編譯標誌"
+msgstr "編譯旗幟"
 
 #: ../../howto/regex.rst:525
-#, fuzzy
 msgid ""
 "Compilation flags let you modify some aspects of how regular expressions "
 "work. Flags are available in the :mod:`re` module under two names, a long "
@@ -1037,27 +1015,24 @@ msgid ""
 "them; ``re.I | re.M`` sets both the :const:`I` and :const:`M` flags, for "
 "example."
 msgstr ""
-"編譯旗標可以讓你修改常規表達式的某些功能。在 :mod:`re` "
+"編譯旗幟可以讓你修改常規表達式的某些功能。在 :mod:`re` "
 "模組中提供了兩個名稱形式：一個是長名稱，如 "
 ":const:`IGNORECASE`，另一個是短名稱，如 "
 ":const:`I`（如果您熟悉Perl的模式修飾符，在Python裡也有相同的字母；例如: "
-"re.VERBOSE 的簡写是 「re.X」）。可以通過按位 OR () 來指定多个旗帜; 例如,``"
-"re.I | re.M`` 同時設置了 :const:`I ` 和： const`:M ` 旗標"
+"re.VERBOSE 的簡寫是 「re.X」）。可以通過按位 OR () 來指定多个旗幟; 例如,``"
+"re.I | re.M`` 同時設置了 :const:`I ` 和： const`:M ` 旗幟。"
 
 #: ../../howto/regex.rst:533
-#, fuzzy
 msgid ""
 "Here's a table of the available flags, followed by a more detailed "
 "explanation of each one."
-msgstr "下表列出了可用的標誌，接下來是每個標誌的更詳細說明。"
+msgstr "下表列出了可用的旗幟，接下來是每個旗幟的詳細說明。"
 
 #: ../../howto/regex.rst:537
-#, fuzzy
 msgid "Flag"
-msgstr "旗標"
+msgstr "旗幟"
 
 #: ../../howto/regex.rst:537
-#, fuzzy
 msgid "Meaning"
 msgstr "意思，含義"
 
