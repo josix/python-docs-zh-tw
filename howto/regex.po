@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Python 3.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
-"PO-Revision-Date: 2023-05-05 12:59+0000\n"
-"Last-Translator: CTHua <illiew2470+pythonTW@gmail.com>\n"
+"PO-Revision-Date: 2023-05-06 13:31+0000\n"
+"Last-Translator: evelyn su <jieui2003@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -1702,10 +1702,9 @@ msgstr "另一種零寬度斷言是「先行斷言」（lookahead "
 
 #: ../../howto/regex.rst:989
 msgid "``(?=...)``"
-msgstr "``(?=...)``"
+msgstr "「(?=...)」"
 
 #: ../../howto/regex.rst:985
-#, fuzzy
 msgid ""
 "Positive lookahead assertion.  This succeeds if the contained regular "
 "expression, represented here by ``...``, successfully matches at the current "
@@ -1713,21 +1712,20 @@ msgid ""
 "tried, the matching engine doesn't advance at all; the rest of the pattern "
 "is tried right where the assertion started."
 msgstr ""
-"正向先行斷言。如果包含在此處的正規表示式被成功匹配到當前位置，則此項目 succee"
-"ds；否則失敗。但一旦已嘗試了所包含的表達式，配對引擎就不再往下移動，在斷言開"
-"始的地方嘗試模式中其餘部分。"
+"正向先行斷言。如果包含在此處的正規表達式被成功匹配到當前位置，則此項目成功；"
+"否則失敗。但一旦嘗試了所包含的表達式，匹配引擎不會再向前移動；模式的其餘部分"
+"會在斷言開始的位置嘗試。"
 
 #: ../../howto/regex.rst:994
 msgid "``(?!...)``"
-msgstr "``(?!...)``"
+msgstr "「(?!...)」"
 
 #: ../../howto/regex.rst:992
-#, fuzzy
 msgid ""
 "Negative lookahead assertion.  This is the opposite of the positive "
 "assertion; it succeeds if the contained expression *doesn't* match at the "
 "current position in the string."
-msgstr "負向先行斷言。這與肯定先行斷言相反；它在當前位置的字串不符合包含表達式時才會"
+msgstr "負向先行斷言。這與正向先行斷言相反；它在當前位置的字串不符合包含表達式時才會"
 "成功。"
 
 #: ../../howto/regex.rst:996
