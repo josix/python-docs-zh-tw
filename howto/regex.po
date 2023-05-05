@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Python 3.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
-"PO-Revision-Date: 2023-05-05 11:57+0000\n"
-"Last-Translator: Josix <josixwang@gmail.com>\n"
+"PO-Revision-Date: 2023-05-05 12:57+0000\n"
+"Last-Translator: raymond <raymond727341@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -1001,7 +1001,7 @@ msgstr ""
 
 #: ../../howto/regex.rst:523
 msgid "Compilation Flags"
-msgstr "編譯旗幟"
+msgstr "編譯標誌"
 
 #: ../../howto/regex.rst:525
 msgid ""
@@ -1025,11 +1025,11 @@ msgstr ""
 msgid ""
 "Here's a table of the available flags, followed by a more detailed "
 "explanation of each one."
-msgstr "下表列出了可用的旗幟，接下來是每個旗幟的詳細說明。"
+msgstr "下表列出了可用的標誌，接下來是每個標誌的詳細說明。"
 
 #: ../../howto/regex.rst:537
 msgid "Flag"
-msgstr "旗幟"
+msgstr "標誌"
 
 #: ../../howto/regex.rst:537
 msgid "Meaning"
@@ -1357,9 +1357,8 @@ msgid "``\\Z``"
 msgstr "``\\Z``"
 
 #: ../../howto/regex.rst:741
-#, fuzzy
 msgid "Matches only at the end of the string."
-msgstr "僅在字串結尾進行匹配。"
+msgstr "只在字串結尾進行匹配。"
 
 #: ../../howto/regex.rst:776
 msgid "``\\b``"
@@ -1372,16 +1371,16 @@ msgid ""
 "characters, so the end of a word is indicated by whitespace or a non-"
 "alphanumeric character."
 msgstr ""
-"單字邊界，是一個零寬度斷言（zero-width "
-"assertion），只會在單詞的開頭或結尾符合。 單字指的是由英文字母和阿拉伯數字所"
-"構成的序列，因此單字的結尾必須以空格或非英數字符號來表示。"
+"單字邊界，是一個只會在單詞的開頭或結尾符合的零寬度斷言（zero-width "
+"assertion）。 單字指的是由英文字母和阿拉伯數字所構成的序列，因此單字的結尾必"
+"須以空格或非英數字符號來表示。"
 
 #: ../../howto/regex.rst:749
 msgid ""
 "The following example matches ``class`` only when it's a complete word; it "
 "won't match when it's contained inside another word. ::"
-msgstr "以下範例只會比對「 ``class`` "
-"」是否為一個完整的單字，當它包含在其他單字中時則不會比對到。 ::"
+msgstr "以下範例只會在當他是一個完整的單字時匹配``class`` "
+"，當它包含在其他單字中時則不會匹配到。 ::"
 
 #: ../../howto/regex.rst:760
 msgid ""
@@ -1396,18 +1395,16 @@ msgstr ""
 "使用這個特殊序列時，請注意兩點細節。首先，這是 Python "
 "字串文字和正則表達式序列之間最嚴重的衝突。在 Python 字串文字中， ``\\b`` "
 "是回退字符（ASCII 值為 8）。如果沒有使用原始字串，那麼 Python 會將 ``\\b`` "
-"轉換為回退鍵，而正則表達式不會按預期匹配。以下實例看起來與我們之前的 RE "
-"相同，但省略了 RE 字符串前面的 ``'r'`` 。\n"
-"\n"
-"::"
+"轉換為回退鍵，而正則表達式不會如預期匹配。以下實例看起來與我們之前的 RE "
+"相同，但省略了 RE 字符串前面的 ``'r'`` 。::"
 
 #: ../../howto/regex.rst:774
 msgid ""
 "Second, inside a character class, where there's no use for this assertion, ``"
 "\\b`` represents the backspace character, for compatibility with Python's "
 "string literals."
-msgstr "第二點，在字元類別中，如果不需要這個斷言，``\\b`` "
-"代表的是回退符號（backspace），為了與 Python 的字串表示法相容。"
+msgstr "其次；在字元類別中，如果不需要這個斷言，為了與 Python 的字串表示法相容，``\\b"
+"`` 代表的是回退符號（backspace）。"
 
 #: ../../howto/regex.rst:781
 msgid "``\\B``"
@@ -1417,13 +1414,12 @@ msgstr "``\\B``"
 msgid ""
 "Another zero-width assertion, this is the opposite of ``\\b``, only matching "
 "when the current position is not at a word boundary."
-msgstr "另一個零寬度斷言（zero-width assertion），這是 ``\\b`` "
+msgstr "另一個零寬度斷言（zero-width assertion），是 ``\\b`` "
 "的相反，僅在當前位置不位於單字邊界時匹配。"
 
 #: ../../howto/regex.rst:784
-#, fuzzy
 msgid "Grouping"
-msgstr "群組化"
+msgstr "分組"
 
 #: ../../howto/regex.rst:786
 msgid ""
@@ -1433,14 +1429,11 @@ msgid ""
 "of interest. For example, an RFC-822 header line is divided into a header "
 "name and a value, separated by a ``':'``, like this:"
 msgstr ""
-"常常需要取得比僅僅判斷正規表達式是否符合的更多資訊。經常用來剖析字串的方式是"
-"撰寫一個正規表示式，其中包含許多子組，可以匹配各種不同的所需元素。例如，RFC-8"
-"22標頭行可分成一個標頭名稱和一個值，由冒號「:」分隔開來︰\n"
-"\n"
-"::"
+"常常需要取得比只是判斷正規表達式是否符合更多的資訊。正則表達式經常被用來解析"
+"字串，通過定義被分成多個子組的正則表達式來匹配不同感興趣的元件。例如，RFC-822"
+"標題行可分成一個標頭名稱和一個值，由':'分隔開來︰::"
 
 #: ../../howto/regex.rst:799
-#, fuzzy
 msgid ""
 "This can be handled by writing a regular expression which matches an entire "
 "header line, and has one group which matches the header name, and another "
@@ -1457,12 +1450,10 @@ msgid ""
 "``, or ``{m,n}``.  For example, ``(ab)*`` will match zero or more "
 "repetitions of ``ab``. ::"
 msgstr ""
-"群組由 ``'('`` 和 ``')'``  元字符標記。 在數學表達式中，``'('``和 ``')'`` "
-"具有大致相同的含義； 它們將其中包含的表達式分組在一起，可以使用量詞（如 ``*``"
-" 、 ``+`` 、 ``?``或 `{m，n}`）重複群組內容。 例如， ``(ab}*`` "
-"可以匹配零個或多個 ``ab`` 。\n"
-"\n"
-"::"
+"群組由``'('``和 ``')'`` 以及元字符標記。``'('`` 和 ``')'``的意義與它們在數學"
+"表達式中的意義差不多；它們將其中包含的表達式分組在一起，並且您可以使用量詞（"
+"如``*``, ``+``, ``?``或``{m,n}``）重複群組內容。例如， "
+"``(ab)*``將匹配零個或多個``ab``的重複。 ::"
 
 #: ../../howto/regex.rst:814
 msgid ""
@@ -1475,35 +1466,29 @@ msgid ""
 "we'll see how to express groups that don't capture the span of text that "
 "they match. ::"
 msgstr ""
-"以符合守則的方式翻譯如下：有括弧主分組 ``'('`` ,  ``')'`` "
-"捕捉了匹配文本的開始與結束索引，可透過向 :meth:`~re.Match.group`、:meth:`~re."
-"Match.start`、:meth:`~re.Match.end` 和:meth:`~re.Match.span` "
-"中傳入參數獲取此訊息。 主分組以 0 開始編號，因此第一個是 "
-"0，代表整個正規表示式(RE)，所以當透過 :ref:`match object <match-objects>` "
-"方法時預設值皆會回傳主分組 0。 "
-"後續我們也會看到如何表示不包含其匹配範圍但需要群聚化的案例。\n"
-"\n"
-"::"
+"用``'('``和``')'``標記的群組也會捕獲它們匹配文本的開始和結束索引；"
+"這可以通過向 :meth:~re.Match.group、:meth:~re.Match.start、:meth:~"
+"re.Match.end 和 :meth:~re.Match.span 傳遞參數來檢索。群組從 0 開始編號。群組 "
+"0 始終存在；它是整個正則表達式，因此 :ref:匹配對象 <match-objects> "
+"方法的默認參數都是群組 "
+"0。稍後我們將看到如何表示不捕獲它們匹配的文本範圍的群組。 ::"
 
 #: ../../howto/regex.rst:830
 msgid ""
 "Subgroups are numbered from left to right, from 1 upward.  Groups can be "
 "nested; to determine the number, just count the opening parenthesis "
 "characters, going from left to right. ::"
-msgstr ""
-"子群組自左而右，由1開始進行編號。此外，群組還可以嵌套；想要確定嵌套數量時，只"
-"需要從左至右計算開啟括號的個數即可。\n"
-"\n"
+msgstr "子群組從左到右從 1 "
+"開始編號。群組可以嵌套；要確定數量，只需從左到右計算開始括號字符的數量即可。 "
 "::"
 
 #: ../../howto/regex.rst:843
-#, fuzzy
 msgid ""
 ":meth:`~re.Match.group` can be passed multiple group numbers at a time, in "
 "which case it will return a tuple containing the corresponding values for "
 "those groups. ::"
 msgstr ":meth:`~re.Match.group` "
-"可以同時傳入多個群組編號，這樣它會回傳包含這些群組對應數值的元组。"
+"可以一次傳遞多個群組編號，此時它會返回一個元組，其中包含這些群組對應的值。::"
 
 #: ../../howto/regex.rst:849
 msgid ""
@@ -1511,8 +1496,8 @@ msgid ""
 "for all the subgroups, from 1 up to however many there are. ::"
 msgstr ""
 ":meth:`~re.Match.groups` "
-"會傳回一個元組（tuple），裡面包含所有子群組（subgroups）所對應的字串，從 1 "
-"到數量上限不等。"
+"會傳回一個元組（tuple），其中包含所有子群組（subgroups）所對應的字串，從 "
+"1一直到最後一個子群組。"
 
 #: ../../howto/regex.rst:855
 msgid ""
@@ -1524,17 +1509,14 @@ msgid ""
 "including arbitrary characters in a string, so be sure to use a raw string "
 "when incorporating backreferences in a RE."
 msgstr ""
-"在模式中使用回溯參照可讓你指定早期捕獲組的內容必須在字串的當前位置也存在。例"
-"如，若精確內容與第一個群組相符合，則 ``\\1`` 將會成功；反之失敗。請記得 "
-"Python 字串面值也使用反斜槓後接數字來包含任意字元，因此在正規表示式 (RE) "
-"中嵌入回溯參照時要用原始字串表達法（raw string）。"
+"在模式中使用回溯參照可讓你指定早期捕獲組的內容必須在字符串的當前位置找到。例"
+"如，如果可以在當前位置找到群組 1 的內容，則「\\1」將成功，否則失敗。請記住，"
+"Python 的字符串文字也使用反斜杠後跟數字來允許在字符串中包含任意字符，"
+"因此在將反向引用包含在 RE 中時，請務必使用原始字符串。"
 
 #: ../../howto/regex.rst:863
 msgid "For example, the following RE detects doubled words in a string. ::"
-msgstr ""
-"例如，以下的正規表示式可以在一個字串中偵測出重複的單詞。\n"
-"\n"
-"::"
+msgstr "舉例來說，以下的正規表示式可以在一個字串中偵測出重複的單詞。::"
 
 #: ../../howto/regex.rst:869
 msgid ""
@@ -1542,13 +1524,11 @@ msgid ""
 "string --- there are few text formats which repeat data in this way --- but "
 "you'll soon find out that they're *very* useful when performing string "
 "substitutions."
-msgstr ""
-"像這樣的反向參照通常對於只是搜尋字串來說並不常用 --- "
-"很少有文字格式會以此方式重複數據 --- 但當你執行字串取代時，就很快發現它們 "
-"*非常* 有用。"
+msgstr "像這樣的回溯參照通常不常用於只是搜尋字串 --- "
+"很少有文本格式會以此方式重複數據 --- "
+"但是在您執行字符串替換時很快就會發現它們非常有用。"
 
 #: ../../howto/regex.rst:875
-#, fuzzy
 msgid "Non-capturing and Named Groups"
 msgstr "非捕獲和命名群組"
 
@@ -2367,16 +2347,15 @@ msgstr ""
 "串，使其很難理解和閱讀。"
 
 #: ../../howto/regex.rst:1353
-#, fuzzy
 msgid ""
 "For such REs, specifying the :const:`re.VERBOSE` flag when compiling the "
 "regular expression can be helpful, because it allows you to format the "
 "regular expression more clearly."
-msgstr "對於這樣的正規表示式（REs），在編譯時指定：const:`re.VERBOSE` "
-"標誌可以很有幫助，因為它允許您更清晰地格式化正則表達式。"
+msgstr ""
+"對於這樣的正規表示式（REs），當編譯正則表達式時指定：const:`re.VERBOSE` "
+"標誌可能會有所幫助，因為它允許您更清晰地格式化正則表達式。"
 
 #: ../../howto/regex.rst:1357
-#, fuzzy
 msgid ""
 "The ``re.VERBOSE`` flag has several effects.  Whitespace in the regular "
 "expression that *isn't* inside a character class is ignored.  This means "
@@ -2390,35 +2369,28 @@ msgstr ""
 "標誌有數個效果。正規表達式中的空白字符（這**不在**字符類中）將被忽略。"
 "這意味著像 ``dog | cat`` 這樣子的表示也等同於比較難讀的寫法： \\```dog|cat\\"
 "``` ，但是 ``[a b]`` 仍然可以匹配到'`a`', "
-"`'b'`或一個空格。此外，您也可以將註釋放入正則表達式內部；註釋從其中一個“#” "
-"字符開始，直到下一行新行為止長度和位置沒有限制，可以自由嵌套和換行使用。\\ "
-"如舉例:`\\\\\\\\```pythonpattern = re.compile(r'''  (\\d+) # capture one or "
-"more digits   [-/+]? # an optional minus or plus sign   (\\d+) # capture one "
-"or more digits''', re.VERBOSE)``當用於三引號字符串時，它使得 REs "
-"可以更整齊地排版:"
+"`'b'`或一個空格。此外，您還可以在正則表達式中添加註釋；註釋從 ``#``字符一直延"
+"伸到下一個換行符。當與三重引號字符串一起使用時，這使得正則表達式可以更整潔地"
+"格式化:"
 
 #: ../../howto/regex.rst:1374
-#, fuzzy
 msgid "This is far more readable than::"
-msgstr "這樣閱讀起來會輕鬆許多：::  這遠比以下方式容易閱讀："
+msgstr "這樣比較易讀::"
 
 #: ../../howto/regex.rst:1380
-#, fuzzy
 msgid "Feedback"
 msgstr "回饋"
 
 #: ../../howto/regex.rst:1382
-#, fuzzy
 msgid ""
 "Regular expressions are a complicated topic.  Did this document help you "
 "understand them?  Were there parts that were unclear, or Problems you "
 "encountered that weren't covered here?  If so, please send suggestions for "
 "improvements to the author."
 msgstr "正規表示式是一個複雜的主題。 這份文件有幫助您了解嗎？ "
-"是否有部分不清楚或未涵蓋到問題？ 如果有，請將改進建議發送給作者。"
+"是否有部分不清楚或未涵蓋到的問題？ 如果有的話，請將改進建議發送給作者。"
 
 #: ../../howto/regex.rst:1387
-#, fuzzy
 msgid ""
 "The most complete book on regular expressions is almost certainly Jeffrey "
 "Friedl's Mastering Regular Expressions, published by O'Reilly.  "
