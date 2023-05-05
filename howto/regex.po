@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-05 12:57+0000\n"
-"Last-Translator: andyjjrt <andyjjrt@gmail.com>\n"
+"Last-Translator: CTHua <illiew2470+pythonTW@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -2088,7 +2088,6 @@ msgstr ""
 "::"
 
 #: ../../howto/regex.rst:1224
-#, fuzzy
 msgid ""
 "When using the module-level :func:`re.sub` function, the pattern is passed "
 "as the first argument.  The pattern may be provided as an object or as a "
@@ -2100,15 +2099,13 @@ msgstr ""
 "當使用模組層級的 :func:`re.sub` 函式時，模式會傳遞為第一個引數。 "
 "模式可以提供為物件或字串; 如果您需要指定正規表示式旗標，必須將模式物件用作第"
 "一個參數，或在模式字串中使用內置修改器，例如 ``sub(\"(?i)b+\", \"x\", \"bbbb "
-"BBBB\")`` 就會返回 ``'x x'``"
+"BBBB\")`` 就會返回 ``'x x'``。"
 
 #: ../../howto/regex.rst:1232
-#, fuzzy
 msgid "Common Problems"
 msgstr "常見問題"
 
 #: ../../howto/regex.rst:1234
-#, fuzzy
 msgid ""
 "Regular expressions are a powerful tool for some applications, but in some "
 "ways their behaviour isn't intuitive and at times they don't behave the way "
