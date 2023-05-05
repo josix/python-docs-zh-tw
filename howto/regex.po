@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-05 12:57+0000\n"
-"Last-Translator: raymond <raymond727341@gmail.com>\n"
+"Last-Translator: Josix <josixwang@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -975,8 +975,8 @@ msgstr ""
 "你不必創建一個模式對象並調用其方法；相應的 :mod:`re` "
 "模塊還提供了頂級函數，如：:func:`~re.match`, :func:`~re.search`, :func:`~re."
 "findall`, :func:`~re.sub`。這些函數與相應的模式方法具有相同的引數（以 RE "
-"字串作為第一個引數），仍然返回 ``None`` 或者是匹配對象 (:ref:`match-objects`)"
-" 實例。 ::"
+"字串作為第一個引數），仍然返回 ``None`` 或者是匹配物件（match object）（ :ref"
+":`match-objects` ) 實例。 ::"
 
 #: ../../howto/regex.rst:510
 msgid ""
@@ -1916,19 +1916,16 @@ msgid "``subn()``"
 msgstr "``subn()``"
 
 #: ../../howto/regex.rst:1072
-#, fuzzy
 msgid ""
 "Does the same thing as :meth:`!sub`,  but returns the new string and the "
 "number of replacements"
-msgstr "跟 `sub()` 方法一樣，但回傳值是所產生的新字串以及替換發生的次數"
+msgstr "跟 `!sub()` 方法一樣，但回傳值是所產生的新字串以及替換發生的次數"
 
 #: ../../howto/regex.rst:1079
-#, fuzzy
 msgid "Splitting Strings"
 msgstr "分割字串"
 
 #: ../../howto/regex.rst:1081
-#, fuzzy
 msgid ""
 "The :meth:`~re.Pattern.split` method of a pattern splits a string apart "
 "wherever the RE matches, returning a list of the pieces. It's similar to "
@@ -1937,24 +1934,24 @@ msgid ""
 "splitting by whitespace or by a fixed string.  As you'd expect, there's a "
 "module-level :func:`re.split` function, too."
 msgstr ""
-"模式的 :meth:`~re.Pattern.split` "
-"方法將字符串拆分為正則表達式匹配到的位置，返回一個列表。它類似於字串的 "
-":meth:`!split` 方法，但在可分隔符號方面提供更多通用性；字串 :meth:`!split` "
-"只支援按空格或固定字元進行拆分 。預期中也有模組級別的函數：:func:`re.split`。"
+":meth:~re.Pattern.split 方法可以將符合正規表示式的部分作為分隔符將字符串拆分"
+"成多個部分，並返回一個列表。它類似於字串的 :meth:`!split` "
+"方法，但在可分隔符號方面提供更多通用性；字串 :meth:`!split` "
+"只支援按空格或固定字元進行拆分 "
+"。正如你所期望的那樣，也有模組級別的函數：:func:`re.split`。"
 
 #: ../../howto/regex.rst:1092
-#, fuzzy
 msgid ""
 "Split *string* by the matches of the regular expression.  If capturing "
 "parentheses are used in the RE, then their contents will also be returned as "
 "part of the resulting list.  If *maxsplit* is nonzero, at most *maxsplit* "
 "splits are performed."
 msgstr ""
-"拆分*string*，以正則表達式作匹配。若RE使用捕獲括號，將其內容也一同返回為結果"
-"列表的元素。當*maxsplit*非零時，最多執行 *maxsplit* 次拆分。"
+"以正則表達式匹配結果拆分 *string* 。若 RE 使用捕獲括號（capturing "
+"parentheses），將其內容也一同返回為結果列表的元素。當 *maxsplit* 非零時，"
+"最多執行 *maxsplit* 次拆分。"
 
 #: ../../howto/regex.rst:1097
-#, fuzzy
 msgid ""
 "You can limit the number of splits made, by passing a value for *maxsplit*. "
 "When *maxsplit* is nonzero, at most *maxsplit* splits will be made, and the "
@@ -1964,10 +1961,11 @@ msgid ""
 msgstr ""
 "你可以透過設定 *maxsplit* 參數來限制分割次數，當 *maxsplit* 值不是零時，最多"
 "分割此數量並將字串剩餘部份作為清單的最終元素回傳。在下面的範例中，以非英文字"
-"母和數字為區隔符號。 ::"
+"母和數字為區隔符號。：\n"
+"\n"
+"::"
 
 #: ../../howto/regex.rst:1109
-#, fuzzy
 msgid ""
 "Sometimes you're not only interested in what the text between delimiters is, "
 "but also need to know what the delimiter was.  If capturing parentheses are "
@@ -1975,24 +1973,23 @@ msgid ""
 "Compare the following calls::"
 msgstr ""
 "有時你不僅對分隔符之間的文本有興趣，也需要知道該分隔符是什麼。 "
-"如果在正規表示式（RE）中使用捕獲括號，那麼它們的值也作為列表的一部分返回。 "
-"比較以下調用："
+"如果在正規表示式（RE）中使用捕獲括號（capturing "
+"parentheses），那麼它們的值也作為列表的一部分返回。 比較以下調用：\n"
+"\n"
+"::"
 
 #: ../../howto/regex.rst:1121
-#, fuzzy
 msgid ""
 "The module-level function :func:`re.split` adds the RE to be used as the "
 "first argument, but is otherwise the same.   ::"
-msgstr "模組層級函式 :func:`re.split` 新增一個參數，作為被用來作為第一個引數的正規表"
-"示式，但除此之外功能和原本相同。"
+msgstr "模塊級別的函數 :func:re.split "
+"將要使用的正則表達式作為第一個參數添加，但其他方面與上述方法相同。::"
 
 #: ../../howto/regex.rst:1133
-#, fuzzy
 msgid "Search and Replace"
 msgstr "搜尋和取代"
 
 #: ../../howto/regex.rst:1135
-#, fuzzy
 msgid ""
 "Another common task is to find all the matches for a pattern, and replace "
 "them with a different string.  The :meth:`~re.Pattern.sub` method takes a "
@@ -2004,51 +2001,47 @@ msgstr ""
 "方法需要傳入替換值，可以是字串或函式，以及要處理的字串。"
 
 #: ../../howto/regex.rst:1142
-#, fuzzy
 msgid ""
 "Returns the string obtained by replacing the leftmost non-overlapping "
 "occurrences of the RE in *string* by the replacement *replacement*.  If the "
 "pattern isn't found, *string* is returned unchanged."
 msgstr ""
-"回傳字串，此字串經取代來源字串 *string* "
-"中最左邊且沒重複的區段符合所提供的正規表示式 RE 所產生之符合 REPLACEMENT "
-"的內容。若未找到該模式，則回傳原始 *string* 字串。"
+"回傳將 *string* 中最左邊的非重疊出現的正規表示式（RE）取代為 *replacement* "
+"所得到的字串。如果找不到符合的模式，則回傳未更改的 *string*。"
 
 #: ../../howto/regex.rst:1146
-#, fuzzy
 msgid ""
 "The optional argument *count* is the maximum number of pattern occurrences "
 "to be replaced; *count* must be a non-negative integer.  The default value "
 "of 0 means to replace all occurrences."
-msgstr "選擇性的參數 *count* 是最大替換次數；*count* "
-"必須是一個非負整數。預設值為0，表示取代所有出現次數。"
+msgstr "可選參數 *count* 為要取代的模式出現的最大次數；*count* 必須是非負整數。"
+"預設值為 0，表示取代所有出現的次數。"
 
 #: ../../howto/regex.rst:1150
-#, fuzzy
 msgid ""
 "Here's a simple example of using the :meth:`~re.Pattern.sub` method.  It "
 "replaces colour names with the word ``colour``::"
-msgstr "以下是使用 ``sub`` 方法的一個簡單範例。它會將顏色名稱替換為「color」："
+msgstr ""
+"以下是使用 :meth:`~re.Pattern.sub` "
+"方法的簡單範例。它將顏色名稱替換為單字「colour」：\n"
+"\n"
+"::"
 
 #: ../../howto/regex.rst:1159
-#, fuzzy
 msgid ""
 "The :meth:`~re.Pattern.subn` method does the same work, but returns a 2-"
 "tuple containing the new string value and the number of replacements  that "
 "were performed::"
-msgstr ""
-":meth:`~re.Pattern.subn` 方法與 :meth:`~re.SubPattern.sub` "
-"相同，但其回傳值為一個包含新字串和替換次數共兩個元素的二元組(tuple)。"
+msgstr ":meth:`~re.Pattern.subn` "
+"方法執行相同的工作，但回傳包含新的字串值和執行的取代數量的二元組（2-tuple）："
 
 #: ../../howto/regex.rst:1168
-#, fuzzy
 msgid ""
 "Empty matches are replaced only when they're not adjacent to a previous "
 "empty match. ::"
-msgstr "只有當一個空匹配不相鄰於先前的空匹配時，才會替換空匹配。 ::"
+msgstr "只有當空字串匹配不與先前的空字串匹配相鄰時，才會進行取代。 ::"
 
 #: ../../howto/regex.rst:1175
-#, fuzzy
 msgid ""
 "If *replacement* is a string, any backslash escapes in it are processed.  "
 "That is, ``\\n`` is converted to a single newline character, ``\\r`` is "
@@ -2058,21 +2051,23 @@ msgid ""
 "incorporate portions of the original text in the resulting replacement "
 "string."
 msgstr ""
-"如果 *replacement* 是一個字串，其中的反斜線會被處理。也就是 `\\n"
-"` 會轉換成新行符號，`\\r` 會轉換成回車鍵等等。未知的轉義符如 `\\&` "
-"則不變留作原樣。可替代參照（backreferences），例如 `\\6`，將會被正則表達式中"
-"相對應組別所匹配到的子字串取代掉，因此可以在替換字串中加上原始訊息文字部分"
+"如果 *replacement* 是一個字串，其中的反斜線跳脫符號會被處理。也就是說，``\\n"
+"`` 會轉換成單一換行符號，``\\r`` 會轉換成回車符號，以此類推。"
+"未知的跳脫符號如 ``\\&`` 會保留原樣。反向引用（backreferences），例如 ``\\6``"
+"，會被替換為正則表達式中對應群組所匹配的子字串。這樣，你可以將原始文本中的部"
+"分內容納入所得到的替換字串中。"
 
 #: ../../howto/regex.rst:1182
-#, fuzzy
 msgid ""
 "This example matches the word ``section`` followed by a string enclosed in "
 "``{``, ``}``, and changes ``section`` to ``subsection``::"
-msgstr "本例尋找單字「section」後，接著一串以大括號包覆的字詞，並將「section」替換為"
-"「subsection」。即："
+msgstr ""
+"這個範例會匹配單字 ``section`` 後面接著一個被 ``{`` 和 ``}`` 包圍的字串，"
+"並將 ``section`` 替換為 ``subsection``：\n"
+"\n"
+"::"
 
 #: ../../howto/regex.rst:1189
-#, fuzzy
 msgid ""
 "There's also a syntax for referring to named groups as defined by the ``(?"
 "P<name>...)`` syntax.  ``\\g<name>`` will use the substring matched by the "
@@ -2083,15 +2078,16 @@ msgid ""
 "literal character ``'0'``.)  The following substitutions are all equivalent, "
 "but use all three variations of the replacement string. ::"
 msgstr ""
-"``(?P<name>...)`` 的語法可以用來引用以 ``name`` 為名的群組，``\\g<name>`` "
-"將會使用所對應到的子字串在命名群組中帶有這個名稱。 "
-"一定也可以使用对应的群组编号来替换（即 \\g<number>）。因此，\\g<2> 相當于 \\2"
-"，在替換字符串中沒什麼歧义。但是如果连接了其它字符时，则不然：例如“\\g<2>0”"
-"操作代表第二个分组加上一个0. 而没有被转义为包含两个数字的分组引用\"20\". "
-"下面三种情况等价而且展示三种形式的替换字符串:."
+"在正則表達式中，也有一種引用使用 ``(?P<name>...)`` "
+"語法定義的命名群組的方式。``\\g<name>`` 會使用由群組名稱 ``name`` "
+"所匹配的子字串，而 ``\\g<number>`` 則使用對應的群組編號。因此，``\\g<2>`` 與 "
+"``\\2`` 是等價的，但在替換字串中，使用 ``\\g<2>0`` 這樣的寫法不會有歧義（``"
+"\\20`` 會被解釋為群組 20 的引用，而不是群組 2 後面跟著字元 "
+"``'0'``）。下面列舉了一些等價的替換字串，使用了這三種不同的寫法：\n"
+"\n"
+"::"
 
 #: ../../howto/regex.rst:1206
-#, fuzzy
 msgid ""
 "*replacement* can also be a function, which gives you even more control.  If "
 "*replacement* is a function, the function is called for every non-"
@@ -2099,17 +2095,19 @@ msgid ""
 "a :ref:`match object <match-objects>` argument for the match and can use "
 "this information to compute the desired replacement string and return it."
 msgstr ""
-"*replacement* （替換物）也可以是一個函數，這樣就能讓你得到更多的控制。如果 "
-"*replacement* 是一個函數，則在每次非重疊出現 *pattern* 的地方都會呼叫該函式。"
-" 在每次呼叫中，將傳遞給該函式 :ref:`match object <match-objects>` "
-"參數以供與匹配相關的替換操作並將其返回。"
+"*replacement* 也可以是一個函數，這樣你就可以更加靈活地控制替換的過程。如果 "
+"*replacement* 是一個函數，那麼這個函數會在每次非重疊出現 *pattern* "
+"的地方被調用。每次調用時，函數會收到一個 :ref:`match object <match-objects>` "
+"作為參數，你可以使用這個對象的信息來計算所需的替換字串，並將其返回。"
 
 #: ../../howto/regex.rst:1212
-#, fuzzy
 msgid ""
 "In the following example, the replacement function translates decimals into "
 "hexadecimal::"
-msgstr "以下是範例，此替換函數可將十進制轉譯成十六進制："
+msgstr ""
+"以下是範例，此替換函數可將十進制轉譯成十六進制：\n"
+"\n"
+"::"
 
 #: ../../howto/regex.rst:1224
 #, fuzzy
@@ -2143,12 +2141,10 @@ msgstr ""
 "，而且偶爾會表現出你未曾預期的結果。本節將指出其中一些最常見的陷阱。"
 
 #: ../../howto/regex.rst:1240
-#, fuzzy
 msgid "Use String Methods"
 msgstr "使用字串方法"
 
 #: ../../howto/regex.rst:1242
-#, fuzzy
 msgid ""
 "Sometimes using the :mod:`re` module is a mistake.  If you're matching a "
 "fixed string, or a single character class, and you're not using any :mod:"
@@ -2160,13 +2156,13 @@ msgid ""
 "engine."
 msgstr ""
 "有時候使用 :mod:`re` "
-"模組會是一個錯誤。如果您只是匹配固定字串或單一字符類，並且不使用任何: "
-"const:`~re.IGNORECASE` 等模块功能，则可能不需要完整的正規表達式的功能。"
-"相對地, 字符串有好幾種方法來執行操作以查找固定字符串，而這些方法通常更快，因"
-"為其實現是一個被優化、小型 C loop 而已，而非大型、更廣泛的正則引擎"
+"模組是一個錯誤。如果你只是匹配一個固定的字符串，或者一個單一的字符類，"
+"而且你沒有使用任何 :mod:`re` 的特性，比如 :const:`~re.IGNORECASE` "
+"標誌，那麼正則表達式的全部功能可能並不需要。對於固定字符串，Python "
+"字符串類型提供了一些方法可以執行相應操作，而且通常會更快，因為實現是一個小的 "
+"C 循環，被針對該用途進行了優化，而不是一個大而泛化的正則表達式引擎。"
 
 #: ../../howto/regex.rst:1250
-#, fuzzy
 msgid ""
 "One example might be replacing a single fixed string with another one; for "
 "example, you might replace ``word`` with ``deed``.  :func:`re.sub` seems "
@@ -2178,12 +2174,13 @@ msgid ""
 "``word`` have a word boundary on either side.  This takes the job beyond  :"
 "meth:`!replace`'s abilities.)"
 msgstr ""
-"一個例子可能是將一個固定字符串替換為另一個，例如您可以將“word” 替换为 "
-"“deed”。使用 :func:`re.sub` 函数似乎是最佳選擇，但要考虑到 :meth:`~str."
-"replace` 方法。请注意,:meth:`!replace` 也會替换單詞内的“word”，将“swordfish”"
-"变成了\"sdeedfish\"，但单纯RE \"word\" 也会这样做。 "
-"（为了避免在单词的部分执行替换，模式必须是`\\bword\\b' ，以要求 `word`` "
-"在任何一侧都有一个字边界。 这将超出 :meth:! replace 的能力范围）"
+"一個例子可能是用另一個固定的字符串替換一個字符串；例如，你可能會將 ``word`` "
+"替換為 ``deed``。:func:`re.sub` 看起來是用於此目的的函數，但是請考慮使用 "
+":meth:`~str.replace` 方法。請注意，:meth:`!replace` 方法也會將 ``word`` "
+"替換為單詞中的 ``word``，將 ``swordfish`` 變成 ``sdeedfish``，"
+"但是單純的正則表達式 ``word`` 也會這樣做。（為了避免在單詞的一部分進行替換，"
+"模式必須是 ``\\bword\\b``，以要求 ``word`` 在兩側都有單詞邊界。"
+"這使得這個任務超出了 :meth:`!replace` 的能力範圍。）"
 
 #: ../../howto/regex.rst:1259
 #, fuzzy
@@ -2327,24 +2324,19 @@ msgstr ""
 "對於這些任務使用 HTML 或XML 解析器模組）"
 
 #: ../../howto/regex.rst:1346
-#, fuzzy
 msgid "Using re.VERBOSE"
-msgstr ""
-"使用 re.VERBOSE在使用 Python 的正規表示式來進行字串處理時，re 模組中的 "
-"VERBOSE 設定是很好用的一個功能。它讓你可以將想要搜尋/替換的模式寫成一個更容易"
-"閱讀且較為完整的格式，適合於需要撰寫複雜正則表達式的程式設計師使用。"
+msgstr "使用 re.VERBOSE"
 
 #: ../../howto/regex.rst:1348
-#, fuzzy
 msgid ""
 "By now you've probably noticed that regular expressions are a very compact "
 "notation, but they're not terribly readable.  REs of moderate complexity can "
 "become lengthy collections of backslashes, parentheses, and metacharacters, "
 "making them difficult to read and understand."
 msgstr ""
-"現在你可能已經注意到正規表示式（regular expression）是一種非常緊湊的符號，但"
-"並不容易閱讀。中等複雜度的正規表達式可能會變成裝滿斜線、括號和元字符的長字符"
-"串，使其很難理解和閱讀。"
+"到現在為止，你可能已經發現正則表達式是一種非常緊湊的表示方法，但是它們並不是"
+"非常易讀的。中等複雜度的正則表達式可能會變成一長串的反斜線、括號和元字符，使"
+"它們難以閱讀和理解。"
 
 #: ../../howto/regex.rst:1353
 msgid ""
