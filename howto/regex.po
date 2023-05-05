@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-05 12:57+0000\n"
-"Last-Translator: Josix <josixwang@gmail.com>\n"
+"Last-Translator: evelyn su <jieui2003@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -1533,7 +1533,6 @@ msgid "Non-capturing and Named Groups"
 msgstr "非捕獲和命名群組"
 
 #: ../../howto/regex.rst:877
-#, fuzzy
 msgid ""
 "Elaborate REs may use many groups, both to capture substrings of interest, "
 "and to group and structure the RE itself.  In complex REs, it becomes "
@@ -1541,13 +1540,11 @@ msgid ""
 "help with this problem.  Both of them use a common syntax for regular "
 "expression extensions, so we'll look at that first."
 msgstr ""
-"複雜的正規表示式（RE）可能會使用許多群組，既用於捕獲感興趣的子串，"
-"又用於分組和結構化 RE 本身。在複雜的 RE 中，很難跟踪群號碼。有兩個功能可以幫"
-"助解決這個問題。它們都使用常見的正則表達式擴展語法來實現，因此我們首先看一下"
-"這種形式。"
+"正規表達式（RE）可能會使用許多群組，用於捕獲感興趣的子串，以及分組和結構化 "
+"RE 本身。在複雜的 RE 中，很難追蹤群組號碼。有兩個功能可以解決這個問題，它們都"
+"使用常見的正規表達式擴展語法來實現，因此我們首先看一下這種形式。"
 
 #: ../../howto/regex.rst:883
-#, fuzzy
 msgid ""
 "Perl 5 is well known for its powerful additions to standard regular "
 "expressions. For these new features the Perl developers couldn't choose new "
@@ -1557,15 +1554,12 @@ msgid ""
 "expressions would be assuming that ``&`` was a regular character and "
 "wouldn't have escaped it by writing ``\\&`` or ``[&]``."
 msgstr ""
-"Perl 5 因其對於常規表示式（regular "
-"expressions）的強大增強而聞名。為了支援這些新特性，Perl "
-"的開發者不能選擇使用單一的按鍵元字符或以「\\」開頭的新特殊序列，否則會使 "
-"Perl 的正規表示式與標準 REs 形成混亂不同之處。例如他們若選擇 & "
-"作為一個新元字符，老表達式就可能誤以為 & 是正常字元並沒有通過組合“\\"
-"&”或“[&]”來跳脫它。"
+"Perl 5 以其對標準正規表達式所做的強大擴充而聞名。對於這些新功能，Perl "
+"開發人員不能選擇新的單一按鍵元字符或以「\\」開頭的新特殊序列，否則會使 Perl "
+"的正規表示式與標準正規表達式混淆不清。例如若選擇「&」作為一個新元字符，舊表示"
+"式將假定「&」是一個常規字符，並且不會通過寫「\\&」或「[&]」來轉義它。"
 
 #: ../../howto/regex.rst:890
-#, fuzzy
 msgid ""
 "The solution chosen by the Perl developers was to use ``(?...)`` as the "
 "extension syntax.  ``?`` immediately after a parenthesis was a syntax error "
@@ -1575,44 +1569,40 @@ msgid ""
 "positive lookahead assertion) and ``(?:foo)`` is something else (a non-"
 "capturing group containing the subexpression ``foo``)."
 msgstr ""
-"Perl 開發人員所選擇的方法是使用 ``(?...)`` 作為擴展語法，直接在括號後面加上 "
-"``?`` 是語法錯誤，因為 ``?`` 無事可做，故此不會引入任何相容性問題。而 ``?`` "
-"後面的字元指出正使用何種擴充功能，因此 ``(?=foo)`` "
-"是一種東西（肯定先行斷言），而 ``(?:foo)`` "
-"則是另一種東西（非捕獲式群組中包含子表達式「foo」）。"
+"Perl 開發人員選擇的解決方案是使用「(?...)」作為擴展語法，直接在括號後面加上「"
+"?」是語法錯誤，因為「?」無事可做，因此這不會出現任何兼容性問題。而「?」後面的"
+"字元指出正使用何種擴充功能，因此「(?=foo)」是一件事情（一個正向先行斷言），而"
+"「(?:foo)」是另一件事情（包含子表達式「foo」的非捕獲群組）。"
 
 #: ../../howto/regex.rst:898
-#, fuzzy
 msgid ""
 "Python supports several of Perl's extensions and adds an extension syntax to "
 "Perl's extension syntax.  If the first character after the question mark is "
 "a ``P``, you know that it's an extension that's specific to Python."
 msgstr "Python 支援 Perl "
-"的數個擴展，並在其基礎上加入了一種撰寫擴展的語法。如果問號後的首字為「P」，"
+"的數個擴展，並在其基礎上加入了一種擴展語法。如果問號後的首字為「P」，"
 "表示它是 Python 專屬的擴展。"
 
 #: ../../howto/regex.rst:903
-#, fuzzy
 msgid ""
 "Now that we've looked at the general extension syntax, we can return to the "
 "features that simplify working with groups in complex REs."
-msgstr "現在我們已經看過一般擴展語法，接著可以回到簡化處理包含多個群組的正規表達式所"
-"需特性。"
+msgstr "現在我們已經看過一般擴展語法，接著可以回到簡化在複雜正則表達式中處理群組的功"
+"能。"
 
 #: ../../howto/regex.rst:906
-#, fuzzy
 msgid ""
 "Sometimes you'll want to use a group to denote a part of a regular "
 "expression, but aren't interested in retrieving the group's contents. You "
 "can make this fact explicit by using a non-capturing group: ``(?:...)``, "
 "where you can replace the ``...`` with any other regular expression. ::"
 msgstr ""
-"有時你會想用群組來表達正規表示式的一部分，但卻不需要加以擷取。"
-"你可以使用非捕獲性群組 ``(?:...)``，在其中可填上任何其他的正規表示式。::備註"
-"：原文中最後有兩個冒號（::），這是reStructuredText格式符號，需保留"
+"有時你會想用群組來表達正規表達式的一部分，但不需要加以擷取。你可以使用非捕獲"
+"群組「(?:...)」，在其中可填上任何其他的正規表達式。：\n"
+"\n"
+"::"
 
 #: ../../howto/regex.rst:918
-#, fuzzy
 msgid ""
 "Except for the fact that you can't retrieve the contents of what the group "
 "matched, a non-capturing group behaves exactly the same as a capturing "
@@ -1624,23 +1614,19 @@ msgid ""
 "performance difference in searching between capturing and non-capturing "
 "groups; neither form is any faster than the other."
 msgstr ""
-"一個非捕獲式群組的行為與捕獲式群組完全相同，唯一的不同就是不能檢索該群組所匹"
-"配內容。你可以在非捕獲式群組中放置任何東西、重複使用``*``等重複元字符，並將其"
-"嵌套在其他（捕獲式或非捕獲）的群組中。當修改現有模式時， ``(?:...)`` 就特別實"
-"用了，因為您可以添加新的分組而無需更改所有其他分組的數字。值得一提的是，在搜"
-"索時指定具名子模式和隨後反覆參考它們之間存在明顯速度差異；但不存在在包含是否"
-"被括號所夾上這個形成闭合结构区别这个层面能帶來性能上的差异。"
+"除了不能檢索群組匹配的內容之外，非捕獲群組與捕獲群組完全相同。您可以在其中放"
+"置任何內容，使用重複元字符（如“*”）重複它，並將其嵌套在其他群組（捕獲或非捕獲"
+"）中。在修改現有模式時「(?:...)」 特別有用，因為您可以添加新群組，而不必更改"
+"所有其他群組的編號方式。值得一提的是，在搜索時捕獲群組和非捕獲群組之間沒有性"
+"能差異；兩者都沒有比另一種形式更快。"
 
 #: ../../howto/regex.rst:927
-#, fuzzy
 msgid ""
 "A more significant feature is named groups: instead of referring to them by "
 "numbers, groups can be referenced by a name."
-msgstr "一個更重要的功能是 \"命名group\""
-"：而不是用數字來引用它們，可以通過名稱來引用群組。"
+msgstr "更重要的功能是命名群組：可以通過名稱而不是數字來引用群組。"
 
 #: ../../howto/regex.rst:930
-#, fuzzy
 msgid ""
 "The syntax for a named group is one of the Python-specific extensions: ``(?"
 "P<name>...)``.  *name* is, obviously, the name of the group.  Named groups "
@@ -1651,35 +1637,39 @@ msgid ""
 "still given numbers, so you can retrieve information about a group in two "
 "ways::"
 msgstr ""
-"命名群組的語法是 Python 特定的擴充功能：``(?P<name>...)``。*name* 顯然是群組"
-"的名稱。命名群組表現與捕獲群組相同，此外還能將一個名字賦予該群組作為其識別。"
-"處理有關捕獲群組的 :ref:`match object <match-objects>` 方法接受由數字引用之表"
-"示欲選取特定群组或以含所需之特定命名之字符串當作輸入替代的方式去透過這些方法"
-"操作命名控制算式咧！雖然每个给定单元只会有一个编号但它也可以由名称调用从而看"
-"到编号。"
+"命名群組的語法是 Python 特定的擴展之一：「(?P<name>...)」。「*name*」是群組的"
+"名稱。命名群組的行為與捕獲群組完全相同，並且還將名稱與群組關聯起來。"
+"處理捕獲群組的 :ref:`match object <match-objects>` 方法都接受引用群組的整數或"
+"包含所需群組名稱的字符串。命名群組仍然有編號，因此您可以以兩種方式檢索有關群"
+"組的信息：\n"
+"\n"
+"::"
 
 #: ../../howto/regex.rst:945
-#, fuzzy
 msgid ""
 "Additionally, you can retrieve named groups as a dictionary with :meth:`~re."
 "Match.groupdict`::"
-msgstr "此外，您可以使用 :meth:`~re.Match.groupdict` 方法將命名群組作為字典檢索："
+msgstr ""
+"此外，您可以使用 :meth:`~re.Match.groupdict` 方法將命名群組作為字典檢索：\n"
+"\n"
+"::"
 
 #: ../../howto/regex.rst:952
-#, fuzzy
 msgid ""
 "Named groups are handy because they let you use easily remembered names, "
 "instead of having to remember numbers.  Here's an example RE from the :mod:"
 "`imaplib` module::"
-msgstr "命名群組是很方便的，因為它們讓你使用容易記住的名稱，而不是要記住數字。"
-"這裡有一個 :mod:`imaplib` 模組中的正則表示式範例："
+msgstr ""
+"命名群組是很方便的，因為它們讓你使用容易記住的名稱，而不是要記住數字。"
+"這裡是一個 :mod:`imaplib` 模組中的正規表達式範例：\n"
+"\n"
+"::"
 
 #: ../../howto/regex.rst:963
-#, fuzzy
 msgid ""
 "It's obviously much easier to retrieve ``m.group('zonem')``, instead of "
 "having to remember to retrieve group 9."
-msgstr "很明顯，取回 ``m.group('zonem')`` 比記住要取得第 9 組方便多了。"
+msgstr "很明顯，檢索「m.group('zonem')」要比記住檢索群組 9 容易得多。"
 
 #: ../../howto/regex.rst:966
 #, fuzzy
