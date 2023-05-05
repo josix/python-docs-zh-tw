@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: Python 3.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
-"PO-Revision-Date: 2023-05-05 12:57+0000\n"
-"Last-Translator: CTHua <illiew2470+pythonTW@gmail.com>\n"
+"PO-Revision-Date: 2023-05-05 12:58+0000\n"
+"Last-Translator: Josix <josixwang@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -2158,7 +2158,6 @@ msgstr ""
 "這使得這個任務超出了 :meth:`!replace` 的能力範圍。）"
 
 #: ../../howto/regex.rst:1259
-#, fuzzy
 msgid ""
 "Another common task is deleting every occurrence of a single character from "
 "a string or replacing it with another single character.  You might do this "
@@ -2166,21 +2165,19 @@ msgid ""
 "capable of doing both tasks and will be faster than any regular expression "
 "operation can be."
 msgstr ""
-"另一個常見的任務是從字串中刪除某個特定字元的所有出現，或以另一個單一字元取代"
-"它。你可能會透過類似這樣的指令實現：``re.sub('\\n"
-"', ' ', S)``，但 :meth:`~str.translate` "
-"可同時做到這兩件事情且速度比正規表示式操作更快。"
+"另一個常見的任務是從字符串中刪除每個單個字符的出現或用另一個單個字符替換它。"
+"你可以使用像 ``re.sub('\\n"
+"', ' ', S)`` 這樣的表達式來完成這個任務，但是 :meth:`~str.translate` "
+"方法能夠完成這兩個任務，而且比任何正則表達式的操作都要快。"
 
 #: ../../howto/regex.rst:1265
-#, fuzzy
 msgid ""
 "In short, before turning to the :mod:`re` module, consider whether your "
 "problem can be solved with a faster and simpler string method."
-msgstr "簡而言之，在使用 :mod:`re` "
-"模組之前，請考慮是否可以使用更快且更簡單的字串方法來解決您的問題。"
+msgstr "總之，在使用 :mod:`re` "
+"模塊之前，請考慮你的問題是否可以用更快、更簡單的字符串方法解決。"
 
 #: ../../howto/regex.rst:1270
-#, fuzzy
 msgid "match() versus search()"
 msgstr "match() 與 search() 的差別"
 
