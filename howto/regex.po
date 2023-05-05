@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-06 13:31+0000\n"
-"Last-Translator: Josix <josixwang@gmail.com>\n"
+"Last-Translator: CTHua <illiew2470+pythonTW@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -2199,7 +2199,6 @@ msgid ""
 msgstr "另一方面，:func:`~re.search` 會從字符串前向掃描，報告它發現的第一個匹配。 ::"
 
 #: ../../howto/regex.rst:1291
-#, fuzzy
 msgid ""
 "Sometimes you'll be tempted to keep using :func:`re.match`, and just add ``."
 "*`` to the front of your RE.  Resist this temptation and use :func:`re."
@@ -2217,7 +2216,6 @@ msgstr ""
 "才嘗試完整匹配。"
 
 #: ../../howto/regex.rst:1300
-#, fuzzy
 msgid ""
 "Adding ``.*`` defeats this optimization, requiring scanning to the end of "
 "the string and then backtracking to find a match for the rest of the RE.  "
@@ -2227,12 +2225,10 @@ msgstr ""
 "的其他匹配項。建議使用 :func:`re.search` 代替。"
 
 #: ../../howto/regex.rst:1306
-#, fuzzy
 msgid "Greedy versus Non-Greedy"
 msgstr "貪婪模式與非貪婪模式"
 
 #: ../../howto/regex.rst:1308
-#, fuzzy
 msgid ""
 "When repeating a regular expression, as in ``a*``, the resulting action is "
 "to consume as much of the pattern as possible.  This fact often bites you "
@@ -2246,7 +2242,6 @@ msgstr ""
 "難以使用單一HTML標籤匹配模式解決困境。::"
 
 #: ../../howto/regex.rst:1322
-#, fuzzy
 msgid ""
 "The RE matches the ``'<'`` in ``'<html>'``, and the ``.*`` consumes the rest "
 "of the string.  There's still more left in the RE, though, and the ``>`` "
@@ -2262,7 +2257,6 @@ msgstr ""
 "title>'``的“>”，這不是您想要的。"
 
 #: ../../howto/regex.rst:1329
-#, fuzzy
 msgid ""
 "In this case, the solution is to use the non-greedy quantifiers ``*?``, ``+?"
 "``, ``??``, or ``{m,n}?``, which match as *little* text as possible.  In the "
@@ -2270,13 +2264,12 @@ msgid ""
 "matches, and when it fails, the engine advances a character at a time, "
 "retrying the ``'>'`` at every step.  This produces just the right result::"
 msgstr ""
-"在這個情況下，解決方法是使用 non-greedy quantifiers ``*?``, ``+?``, ``??``, "
-"或 ``{m,n}?``。它會匹配最少的文字。在上面的範例中，當第一個``'<'``被匹配後就"
-"立即嘗試``'>'``，如果失敗則引擎每次向前移動一個字符並重新嘗試匹配到此為止。這"
-"樣可以得到正確的結果："
+"在這個情況下，解決方法是使用非貪婪量詞（non-greedy quantifiers） ``*?``, "
+"``+?``, ``??``, 或 ``{m,n}?``。它會匹配最少的文字。在上面的範例中，當第一個``"
+"'<'``被匹配後就立即嘗試``'>'``，如果失敗則引擎每次向前移動一個字符並重新嘗試"
+"匹配到此為止。這樣可以得到正確的結果："
 
 #: ../../howto/regex.rst:1338
-#, fuzzy
 msgid ""
 "(Note that parsing HTML or XML with regular expressions is painful. Quick-"
 "and-dirty patterns will handle common cases, but HTML and XML have special "
