@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: Python 3.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
-"PO-Revision-Date: 2023-05-05 12:58+0000\n"
+"PO-Revision-Date: 2023-05-05 12:59+0000\n"
 "Last-Translator: evelyn su <jieui2003@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
@@ -1693,13 +1693,12 @@ msgid "Lookahead Assertions"
 msgstr "先行斷言"
 
 #: ../../howto/regex.rst:981
-#, fuzzy
 msgid ""
 "Another zero-width assertion is the lookahead assertion.  Lookahead "
 "assertions are available in both positive and negative form, and  look like "
 "this:"
 msgstr "另一種零寬度斷言是「先行斷言」（lookahead "
-"assertion）。先行斷言分為肯定和否定兩種形式，符號如下："
+"assertion）。先行斷言分為正向和負向兩種形式，符號如下："
 
 #: ../../howto/regex.rst:989
 msgid "``(?=...)``"
