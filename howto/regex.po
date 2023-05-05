@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-05 11:57+0000\n"
-"Last-Translator: raymond <raymond727341@gmail.com>\n"
+"Last-Translator: Josix <josixwang@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -1377,12 +1377,11 @@ msgstr ""
 "構成的序列，因此單字的結尾必須以空格或非英數字符號來表示。"
 
 #: ../../howto/regex.rst:749
-#, fuzzy
 msgid ""
 "The following example matches ``class`` only when it's a complete word; it "
 "won't match when it's contained inside another word. ::"
-msgstr "以下範例只會比對「``class``」是否為一個完整的單字，當它包含在其他單字中時則不"
-"會比對到。 ::"
+msgstr "以下範例只會比對「 ``class`` "
+"」是否為一個完整的單字，當它包含在其他單字中時則不會比對到。 ::"
 
 #: ../../howto/regex.rst:760
 msgid ""
