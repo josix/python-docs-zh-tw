@@ -11,7 +11,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-05 12:57+0000\n"
-"Last-Translator: evelyn su <jieui2003@gmail.com>\n"
+"Last-Translator: andyjjrt <andyjjrt@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: regex\n"
@@ -1746,16 +1746,14 @@ msgstr ""
 "rc」中，「news」是基本名稱，而「rc」是文件的副檔名。"
 
 #: ../../howto/regex.rst:1001
-#, fuzzy
 msgid "The pattern to match this is quite simple:"
-msgstr "符合此模式的正則表示式相當簡單："
+msgstr "符合此模式的正規表示式相當簡單："
 
 #: ../../howto/regex.rst:1003
 msgid "``.*[.].*$``"
 msgstr "``.*[.].*$``"
 
 #: ../../howto/regex.rst:1005
-#, fuzzy
 msgid ""
 "Notice that the ``.`` needs to be treated specially because it's a "
 "metacharacter, so it's inside a character class to only match that specific "
@@ -1764,36 +1762,32 @@ msgid ""
 "expression matches ``foo.bar`` and ``autoexec.bat`` and ``sendmail.cf`` and "
 "``printers.conf``."
 msgstr ""
-"請注意 ``.`` "
-"需要特殊處理，因為它是一個元字符，所以必須在字元類中使用才能匹配該特定字符。"
-"同時請注意尾隨的 `$` 符號; 這是為了確保擴展名中包含所有其餘部分。"
-"此正規表達式匹配 `foo.bar`、 `autoexec.bat`、 `sendmail.cf`和 `printers.conf`"
-" 等檔案名稱。"
+"請注意 ``.`` 需要特殊處理，因為它是一個元字符，所以必須在字元類別中使用才能匹"
+"配該特定字符。同時也要注意尾隨的 `$` "
+"符號；這是為了確保擴展名中包含所有其餘部分。此正規表達式匹配 `foo.bar` 、 "
+"`autoexec.bat` 、 `sendmail.cf` 和 `printers.conf` 等檔案名稱。"
 
 #: ../../howto/regex.rst:1012
-#, fuzzy
 msgid ""
 "Now, consider complicating the problem a bit; what if you want to match "
 "filenames where the extension is not ``bat``? Some incorrect attempts:"
-msgstr "現在，考慮再複雜化問題；如果你想要匹配副檔名不是「bat」的文件名呢？以下是一些"
-"錯誤嘗試："
+msgstr "現在，考慮更複雜一點的問題；如果你想要匹配副檔名不是「bat」的文件名呢？以下是"
+"一些錯誤嘗試："
 
 #: ../../howto/regex.rst:1015
-#, fuzzy
 msgid ""
 "``.*[.][^b].*$``  The first attempt above tries to exclude ``bat`` by "
 "requiring that the first character of the extension is not a ``b``.  This is "
 "wrong, because the pattern also doesn't match ``foo.bar``."
 msgstr ""
 "``.*[.][^b].*$`` 上述的第一個嘗試是試圖通過要求擴展名的第一個字符不是 ``b``，"
-"來排除 ``bat``。這是錯誤的，因為此模式也無法匹配“foo.bar”。"
+"來排除 ``bat``。這是錯誤的，因為此模式也無法匹配 ``foo.bar`` 。"
 
 #: ../../howto/regex.rst:1019
 msgid "``.*[.]([^b]..|.[^a].|..[^t])$``"
 msgstr "``.*[.]([^b]..|.[^a].|..[^t])$``"
 
 #: ../../howto/regex.rst:1021
-#, fuzzy
 msgid ""
 "The expression gets messier when you try to patch up the first solution by "
 "requiring one of the following cases to match: the first character of the "
@@ -1803,44 +1797,40 @@ msgid ""
 "with a two-letter extension such as ``sendmail.cf``.  We'll complicate the "
 "pattern again in an effort to fix it."
 msgstr ""
-"當我們嘗試透過要求以下情況中的一種匹配以修補第一個解決方案時，表達式變得更加"
-"混亂：擴展名的第一個字元不是「b」 ; 第二个字符不是「a」; "
-"或者第三个字符不是「t」。这將接受 \"foo.bar\" 和拒絕 \"autoexec.bat\" "
-"，但它需要一个三字母擴展名，并且将无法接受具有两字母擴展名（例如“sendmail."
-"cf”）的文件名。我们將再次混合模式，试图进行修复。"
+"當我們嘗試透過要求以下情況中的一種匹配以修補第一個解決方法時，表達式變得更加"
+"混亂：擴展名的第一個字元不是「b」 ; 第二個字元不是「a」; "
+"或者第三個字元不是「t」。这將接受 ``foo.bar`` 和拒絕 ``autoexec.bat`` "
+"，但它需要一個三個字元的擴展名，並且將無法接受只有兩個字元的擴展名（例如 "
+"``sendmail.cf`` ）的文件名。我們將再次複雜化模式，以嘗試修復它。"
 
 #: ../../howto/regex.rst:1029
 msgid "``.*[.]([^b].?.?|.[^a]?.?|..?[^t]?)$``"
 msgstr "``.*[.]([^b].?.?|.[^a]?.?|..?[^t]?)$``"
 
 #: ../../howto/regex.rst:1031
-#, fuzzy
 msgid ""
 "In the third attempt, the second and third letters are all made optional in "
 "order to allow matching extensions shorter than three characters, such as "
 "``sendmail.cf``."
-msgstr "在第三次嘗試中，第二個和第三個字母均為可選項以便匹配短於三個字符的擴展名，例"
-"如“sendmail.cf”。"
+msgstr "在第三次嘗試中，第二個和第三個字母均為可選選項以便匹配短於三個字符的擴展名，"
+"例如 ``sendmail.cf``。"
 
 #: ../../howto/regex.rst:1035
-#, fuzzy
 msgid ""
 "The pattern's getting really complicated now, which makes it hard to read "
 "and understand.  Worse, if the problem changes and you want to exclude both "
 "``bat`` and ``exe`` as extensions, the pattern would get even more "
 "complicated and confusing."
 msgstr ""
-"現在這個樣式變得非常複雜，這使得它很難閱讀和理解。更糟的是，如果問題發生改變"
-"，並且您要排除``bat``和 ``exe`` "
+"現在這個模式變得非常複雜，這使得它很難閱讀和理解。更糟的是，如果問題發生改變"
+"，並且要排除 ``bat`` 和  ``exe`` "
 "作為副檔名，那麼該模式就會變得更加複雜和混亂。"
 
 #: ../../howto/regex.rst:1040
-#, fuzzy
 msgid "A negative lookahead cuts through all this confusion:"
-msgstr "一個負向前瞻可以解決所有這些困惑："
+msgstr "一個否定型前視可以解決所有這些困擾："
 
 #: ../../howto/regex.rst:1042
-#, fuzzy
 msgid ""
 "``.*[.](?!bat$)[^.]*$``  The negative lookahead means: if the expression "
 "``bat`` doesn't match at this point, try the rest of the pattern; if ``bat"
@@ -1849,19 +1839,19 @@ msgid ""
 "starts with ``bat``, will be allowed.  The ``[^.]*`` makes sure that the "
 "pattern works when there are multiple dots in the filename."
 msgstr ""
-"``.*[.](?!bat$)[^.]*$``這個表達式中負向前瞻的意思是：如果現在此處的表達式「ba"
-"t」不符合，則嘗試模式其餘部分；如果「bat$」能夠匹配成功，則整個模式將失敗。必"
-"須使用結尾的「$」來確保類似於`sample.batch` 的文件名(其中擴展名僅以 `bat` "
-"開頭)也可以被接受。「[^.] *」則確保了當文件名中存在多個點時，該模式仍然有效。"
+"``.*[.](?!bat$)[^.]*$``這個表達式中否定型前視的意思是：如果現在此處的表達式 "
+"``bat`` 不符合，則嘗試模式的其餘部分；如果 ``bat$`` "
+"能夠匹配成功，則整個模式將失敗。必須使用結尾的 ``$`` 來確保類似於 ``sample."
+"batch`` 的文件名 （其中擴展名僅以 ``bat`` 開頭）也可以被接受。 ``[^.] *`` "
+"則確保了當文件名中存在多個點（dot）時，該模式仍然有效。"
 
 #: ../../howto/regex.rst:1049
-#, fuzzy
 msgid ""
 "Excluding another filename extension is now easy; simply add it as an "
 "alternative inside the assertion.  The following pattern excludes filenames "
 "that end in either ``bat`` or ``exe``:"
-msgstr "排除其他檔案副檔名現在很容易；只要在斷言中加入它作為替代方案即可。下列模式可"
-"以排除以``bat``或``exe``結尾的檔案："
+msgstr "排除其他檔案副檔名現在很容易；只要在斷言中加入它作為替代方案即可。"
+"下列模式可以排除以 ``bat`` 或 ``exe`` 結尾的檔案："
 
 #: ../../howto/regex.rst:1053
 msgid "``.*[.](?!bat$|exe$)[^.]*$``"
@@ -1873,22 +1863,20 @@ msgid "Modifying Strings"
 msgstr "修改字串"
 
 #: ../../howto/regex.rst:1059
-#, fuzzy
 msgid ""
 "Up to this point, we've simply performed searches against a static string. "
 "Regular expressions are also commonly used to modify strings in various "
 "ways, using the following pattern methods:"
-msgstr "到目前為止，我們僅對一個靜態字符串執行了搜尋。正規表示式也常被用來以不同方式"
-"修改字串，使用下列模式方法："
+msgstr "到目前為止，我們僅對一個靜態字串進行了搜尋。正規表示式也常被用來以不同方式修"
+"改字串，使用下列模式方法："
 
 #: ../../howto/regex.rst:1066
 msgid "``split()``"
 msgstr "``split()``"
 
 #: ../../howto/regex.rst:1066
-#, fuzzy
 msgid "Split the string into a list, splitting it wherever the RE matches"
-msgstr "將字串拆分成一個列表，在與正規表示式(RE)相符處進行拆分"
+msgstr "將字串分割成一個列表，在與正規表示式(RE)相符處進行分割"
 
 #: ../../howto/regex.rst:1069
 msgid "``sub()``"
