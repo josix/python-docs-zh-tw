@@ -9,15 +9,16 @@ msgstr ""
 "Project-Id-Version: Python 3.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
-"PO-Revision-Date: 2018-05-23 14:36+0000\n"
-"Last-Translator: Adrian Liaw <adrianliaw2000@gmail.com>\n"
-"Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-"
-"tw)\n"
-"Language: zh_TW\n"
+"PO-Revision-Date: 2023-05-12 12:28+0000\n"
+"Last-Translator: andyjjrt <andyjjrt@gmail.com>\n"
+"Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
+"\n"
+"Language: descriptor\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 4.16.4\n"
 
 #: ../../howto/descriptor.rst:5
 msgid "Descriptor HowTo Guide"
@@ -47,30 +48,33 @@ msgstr "目錄"
 msgid ""
 ":term:`Descriptors <descriptor>` let objects customize attribute lookup, "
 "storage, and deletion."
-msgstr ""
+msgstr ":term:`描述符 <descriptor>` 讓對象自定義屬性的查找、儲存和刪除。"
 
 #: ../../howto/descriptor.rst:16
 msgid "This guide has four major sections:"
-msgstr ""
+msgstr "本指南共有四個主要部分："
 
 #: ../../howto/descriptor.rst:18
 msgid ""
 "The \"primer\" gives a basic overview, moving gently from simple examples, "
 "adding one feature at a time.  Start here if you're new to descriptors."
-msgstr ""
+msgstr "「入門篇」提供了基本概述，從簡單的範例開始逐步增加功能。如果您是修飾器的初學"
+"者，請從這裡開始。"
 
 #: ../../howto/descriptor.rst:21
 msgid ""
 "The second section shows a complete, practical descriptor example.  If you "
 "already know the basics, start there."
-msgstr ""
+msgstr "第二部分展示了一個完整的實用修飾器範例。如果您已經了解基礎知識，可以從這裡開"
+"始。"
 
 #: ../../howto/descriptor.rst:24
 msgid ""
 "The third section provides a more technical tutorial that goes into the "
 "detailed mechanics of how descriptors work.  Most people don't need this "
 "level of detail."
-msgstr ""
+msgstr "第三部分提供了一個更加技術性的教學，深入探討修飾器的詳細機制。大多數人不需要"
+"這種細節等級的內容。"
 
 #: ../../howto/descriptor.rst:28
 msgid ""
@@ -79,38 +83,42 @@ msgid ""
 "bound methods or about the implementation of common tools like :func:"
 "`classmethod`, :func:`staticmethod`, :func:`property`, and :term:`__slots__`."
 msgstr ""
+"最後一部分提供了一些純 Python 的內建修飾器，這些修飾器在 C "
+"語言中寫成。如果您對函數如何變成綁定方法或常用工具（如 :func:`classmethod` 、"
+" :func:`staticmethod` 、 :func:`property` 和 :term: `__slots__` "
+"）的實現方式感到好奇，請閱讀此部分。"
 
 #: ../../howto/descriptor.rst:36
 msgid "Primer"
-msgstr ""
+msgstr "入門篇"
 
 #: ../../howto/descriptor.rst:38
 msgid ""
 "In this primer, we start with the most basic possible example and then we'll "
 "add new capabilities one by one."
-msgstr ""
+msgstr "在這個入門篇中，我們從最基本的例子開始，然後逐步增加新的功能。"
 
 #: ../../howto/descriptor.rst:43
 msgid "Simple example: A descriptor that returns a constant"
-msgstr ""
+msgstr "簡單的例子：一個回傳常數的修飾器"
 
 #: ../../howto/descriptor.rst:45
 msgid ""
 "The :class:`Ten` class is a descriptor whose :meth:`__get__` method always "
 "returns the constant ``10``:"
-msgstr ""
+msgstr ":class:`Ten` 類別是一個修飾器，其 :meth:`__get__` 方法始終回傳常數 ``10``："
 
 #: ../../howto/descriptor.rst:54
 msgid ""
 "To use the descriptor, it must be stored as a class variable in another "
 "class:"
-msgstr ""
+msgstr "要使用修飾器，它必須作為另一個類別中的類變量儲存："
 
 #: ../../howto/descriptor.rst:62
 msgid ""
 "An interactive session shows the difference between normal attribute lookup "
 "and descriptor lookup:"
-msgstr ""
+msgstr "一個交互式會話演示了普通屬性查找和修飾器查找之間的區別："
 
 #: ../../howto/descriptor.rst:73
 msgid ""
@@ -119,12 +127,16 @@ msgid ""
 "descriptor instance, recognized by its ``__get__`` method. Calling that "
 "method returns ``10``."
 msgstr ""
+"在 ``a.x`` 屬性查找中，點運算符在類別字典中找到了 ``'x': 5``。在 ``a.y`` "
+"查找中，點運算符找到了一個修飾器實例，通過其 ``__get__`` 方法識別。"
+"使用該方法回傳了 ``10``。"
 
 #: ../../howto/descriptor.rst:78
 msgid ""
 "Note that the value ``10`` is not stored in either the class dictionary or "
 "the instance dictionary.  Instead, the value ``10`` is computed on demand."
-msgstr ""
+msgstr "請注意，值 ``10`` 沒有儲存在類別字典或實例字典中。相反，值 ``10`` "
+"在需要時被計算。"
 
 #: ../../howto/descriptor.rst:81
 msgid ""
