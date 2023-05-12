@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-12 12:28+0000\n"
-"Last-Translator: Josix <josixwang@gmail.com>\n"
+"Last-Translator: 鍾禕宸 <eason.chung9@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: descriptor\n"
@@ -142,28 +142,29 @@ msgstr "請注意，值 ``10`` 沒有儲存在類別字典或實例字典中。�
 msgid ""
 "This example shows how a simple descriptor works, but it isn't very useful. "
 "For retrieving constants, normal attribute lookup would be better."
-msgstr ""
+msgstr "這個範例展示了簡單修飾器的運作方式，但並不是很實用。對於取得常數來說，一般的"
+"屬性查找會比較好。"
 
 #: ../../howto/descriptor.rst:84
 msgid ""
 "In the next section, we'll create something more useful, a dynamic lookup."
-msgstr ""
+msgstr "在接下來的章節中，我們將創建一個更實用的功能，動態查找。"
 
 #: ../../howto/descriptor.rst:88
 msgid "Dynamic lookups"
-msgstr ""
+msgstr "動態查找"
 
 #: ../../howto/descriptor.rst:90
 msgid ""
 "Interesting descriptors typically run computations instead of returning "
 "constants:"
-msgstr ""
+msgstr "有用的修飾器通常執行運算而非返回常數:"
 
 #: ../../howto/descriptor.rst:109
 msgid ""
 "An interactive session shows that the lookup is dynamic — it computes "
 "different, updated answers each time::"
-msgstr ""
+msgstr "互動式會話顯示查找是動態的—每次都會計算出不同的、更新的答案::"
 
 #: ../../howto/descriptor.rst:122
 msgid ""
@@ -174,10 +175,15 @@ msgid ""
 "that lets the :meth:`__get__` method learn the target directory.  The "
 "*objtype* parameter is the class *Directory*."
 msgstr ""
+"除了展示修飾器可以執行計算之外，這個例子還揭示了傳遞給 :meth: ` __get__` "
+"參數的目的。 * self * 參數是 * size *，一個 * DirectorySize * 實例。\n"
+"* obj * 參數可以是 * g * 或 * s *，這兩者都是 * Directory* 的實例。:meth: ` "
+"__get__ ` 能夠透過 * obj * 參數來學習目標目錄，而 * objtype * 參數則代表 * "
+"Directory * 這個類別。"
 
 #: ../../howto/descriptor.rst:131
 msgid "Managed attributes"
-msgstr ""
+msgstr "受管理屬性"
 
 #: ../../howto/descriptor.rst:133
 msgid ""
@@ -187,19 +193,24 @@ msgid ""
 "dictionary.  The descriptor's :meth:`__get__` and :meth:`__set__` methods "
 "are triggered when the public attribute is accessed."
 msgstr ""
+"修飾器的一個常見用途是管理對實例數據的訪問。修飾器被分配給類字典中的公共屬性"
+"，而實際數據則存儲為實例字典中的私有屬性。修飾器的 :meth\" ` __get__ ` 跟 "
+":meth: ` __set__ `方法會在公共屬性被訪問時觸發。"
 
 #: ../../howto/descriptor.rst:139
 msgid ""
 "In the following example, *age* is the public attribute and *_age* is the "
 "private attribute.  When the public attribute is accessed, the descriptor "
 "logs the lookup or update:"
-msgstr ""
+msgstr "在接下來的舉例中， * age * 是公共屬性 * age "
+"*是私有屬性。當公共屬性被訪問時，修飾器會記錄查找或更新:"
 
 #: ../../howto/descriptor.rst:172
 msgid ""
 "An interactive session shows that all access to the managed attribute *age* "
 "is logged, but that the regular attribute *name* is not logged:"
-msgstr ""
+msgstr "一個交互式會話顯示，所有對管理屬性 * age * 的訪問都會被記錄下來，但常規屬性 *"
+" name * 則未被記錄:"
 
 #: ../../howto/descriptor.rst:206
 msgid ""
@@ -208,16 +219,19 @@ msgid ""
 "only have one logged attribute and that its name is unchangeable.  In the "
 "next example, we'll fix that problem."
 msgstr ""
+"這個例子的一個主要問題是私有名稱 * _age * 在 * LoggedAgeAccess * 類中是固線式"
+"的。這意味著每個實例只能有一個記錄的屬性，而且它的名稱是不能更改的。在下一個"
+"例子中，我們將解決這個問題。"
 
 #: ../../howto/descriptor.rst:213
 msgid "Customized names"
-msgstr ""
+msgstr "客製化名稱"
 
 #: ../../howto/descriptor.rst:215
 msgid ""
 "When a class uses descriptors, it can inform each descriptor about which "
 "variable name was used."
-msgstr ""
+msgstr "當一個類別使用修飾器時，它可以通知每個修飾器使用了哪個變量名。"
 
 #: ../../howto/descriptor.rst:218
 msgid ""
@@ -227,6 +241,10 @@ msgid ""
 "can be recorded, giving each descriptor its own *public_name* and "
 "*private_name*:"
 msgstr ""
+"在這個例子中， :class: ` Person ` 類有兩個修飾器實例，* name * 和 * age *。 "
+"當:class: ` Person ` 被定義時，它會調用 * LoggedAccess * 中的 :meth: ` "
+"__set_name__ ` 回調函數，以便記錄字段名稱，為每個修飾器提供自己的 * "
+"public_name * 和 * private_name *:"
 
 #: ../../howto/descriptor.rst:256
 msgid ""
@@ -234,14 +252,16 @@ msgid ""
 "`__set_name__` so that the field names would be recorded.  Here we call :"
 "func:`vars` to look up the descriptor without triggering it:"
 msgstr ""
+"一個互動式會話顯示， :class: ` Person ` 類已調用 :meth: `__set_name__ "
+"`，以記錄字段名稱。 在這裡我們調用 :func:vars 來查找修飾器，卻不會觸發它:"
 
 #: ../../howto/descriptor.rst:267
 msgid "The new class now logs access to both *name* and *age*:"
-msgstr ""
+msgstr "新的類別會被記錄到 * name * 跟 * age *:"
 
 #: ../../howto/descriptor.rst:284
 msgid "The two *Person* instances contain only the private names:"
-msgstr ""
+msgstr "這兩個 * Person * 實例僅包含私有名稱:"
 
 #: ../../howto/descriptor.rst:295
 msgid "Closing thoughts"
