@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-12 12:28+0000\n"
-"Last-Translator: andyjjrt <andyjjrt@gmail.com>\n"
+"Last-Translator: Josix <josixwang@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: descriptor\n"
@@ -245,13 +245,15 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:295
 msgid "Closing thoughts"
-msgstr ""
+msgstr "結語"
 
 #: ../../howto/descriptor.rst:297
 msgid ""
 "A :term:`descriptor` is what we call any object that defines :meth:"
 "`__get__`, :meth:`__set__`, or :meth:`__delete__`."
 msgstr ""
+"一個 :term:`descriptor` 是指任何定義了 :meth:`__get__`、:meth:`__set__`、或 "
+":meth:`__delete__` 中的一種或多種方法的物件。"
 
 #: ../../howto/descriptor.rst:300
 msgid ""
@@ -260,6 +262,9 @@ msgid ""
 "it was created or the name of class variable it was assigned to.  (This "
 "method, if present, is called even if the class is not a descriptor.)"
 msgstr ""
+"選擇性地，修飾器可以擁有 `:meth:`__set_name__` 方法。這僅在修飾器需要知道它被"
+"建立的類別或是它被賦予的類別變數的名稱時才會使用。（即使該方法存在，如果該類"
+"別不是修飾器，該方法也會被調用。）"
 
 #: ../../howto/descriptor.rst:305
 msgid ""
@@ -267,12 +272,15 @@ msgid ""
 "descriptor is accessed indirectly with ``vars(some_class)"
 "[descriptor_name]``, the descriptor instance is returned without invoking it."
 msgstr ""
+"修飾器會在屬性查找時透過點運算子被呼叫。如果透過 "
+"``vars(some_class)[descriptor_name]`` "
+"間接存取修飾器，則會直接回傳修飾器實例，而不會呼叫它。"
 
 #: ../../howto/descriptor.rst:309
 msgid ""
 "Descriptors only work when used as class variables.  When put in instances, "
 "they have no effect."
-msgstr ""
+msgstr "修飾器（Descriptors）只有在作為類別變數時才有效。如果放在實例中，則不起作用。"
 
 #: ../../howto/descriptor.rst:312
 msgid ""
@@ -377,7 +385,7 @@ msgstr ""
 msgid ""
 "What follows is a more technical tutorial for the mechanics and details of "
 "how descriptors work."
-msgstr ""
+msgstr "以下是關於修飾器如何運作的更為技術性的教程，介紹其機制和詳細細節。"
 
 #: ../../howto/descriptor.rst:488
 msgid "Abstract"
@@ -388,16 +396,18 @@ msgid ""
 "Defines descriptors, summarizes the protocol, and shows how descriptors are "
 "called.  Provides an example showing how object relational mappings work."
 msgstr ""
+"定義修飾器（Descriptors），概述協議（Protocol），並展示修飾器如何被呼叫。提供"
+"一個範例，說明物件關聯對應（Object Relational Mappings）的運作方式。"
 
 #: ../../howto/descriptor.rst:493
 msgid ""
 "Learning about descriptors not only provides access to a larger toolset, it "
 "creates a deeper understanding of how Python works."
-msgstr ""
+msgstr "學習修飾器不僅提供更廣泛的工具集，還可以深入了解 Python 的運作方式。"
 
 #: ../../howto/descriptor.rst:498
 msgid "Definition and introduction"
-msgstr ""
+msgstr "定義和介紹"
 
 #: ../../howto/descriptor.rst:500
 msgid ""
@@ -406,6 +416,10 @@ msgid ""
 "`__set__`, and :meth:`__delete__`.  If any of those methods are defined for "
 "an attribute, it is said to be a :term:`descriptor`."
 msgstr ""
+"一般來說，修飾器是擁有修飾器協議中的一種方法的屬性值。這些方法是 "
+":meth:`__get__` 、:meth:`__set__` 和 :meth:`__delete__` "
+"。如果一個屬性定義了這些方法中的任何一個，那麼它就被稱為 :term:`descriptor` "
+"。"
 
 #: ../../howto/descriptor.rst:505
 msgid ""
@@ -418,6 +432,12 @@ msgid ""
 "Where this occurs in the precedence chain depends on which descriptor "
 "methods were defined."
 msgstr ""
+"屬性存取的預設行為為從物件的字典中取得、設定或刪除屬性。例如，對於 ``a.x`` "
+"的查找鏈，起始於 ``a.__dict__['x']``，然後是 ``type(a).__dict__['x']``，"
+"接著繼續通過 ``type(a)`` "
+"的方法解析順序。如果找到的值是定義其中一個修飾器方法的物件，那麼 Python 可能"
+"會覆蓋預設行為，並調用修飾器方法。這取決於定義了哪些修飾器方法而決定其在優先"
+"順序鏈中的位置。"
 
 #: ../../howto/descriptor.rst:514
 msgid ""
@@ -427,10 +447,14 @@ msgid ""
 "simplify the underlying C code and offer a flexible set of new tools for "
 "everyday Python programs."
 msgstr ""
+"修飾器（Descriptors）是一種強大的通用協議。它們是屬性（properties）、方法（me"
+"thods）、靜態方法（static methods）、類方法（class methods）和 "
+":func:`super()` 背後的機制。它們在 Python 內部被廣泛使用。修飾器簡化了底層的 "
+"C 程式碼，為日常使用的 Python 程式提供了一個靈活的新工具集。"
 
 #: ../../howto/descriptor.rst:522
 msgid "Descriptor protocol"
-msgstr ""
+msgstr "修飾器協議"
 
 #: ../../howto/descriptor.rst:524
 msgid "``descr.__get__(self, obj, type=None) -> value``"
@@ -449,7 +473,8 @@ msgid ""
 "That is all there is to it.  Define any of these methods and an object is "
 "considered a descriptor and can override default behavior upon being looked "
 "up as an attribute."
-msgstr ""
+msgstr "這就是全部。若定義了這些方法任一個，物件將被視為修飾器，並可在被當作屬性查找"
+"時覆寫預設的行為。"
 
 #: ../../howto/descriptor.rst:534
 msgid ""
@@ -458,6 +483,10 @@ msgid ""
 "non-data descriptors (they are often used for methods but other uses are "
 "possible)."
 msgstr ""
+"如果一個物件定義了 :meth:`__set__` 或 :meth:`__delete__` "
+"方法，則它被視為資料修飾器（data descriptor）。只定義了 :meth:`__get__` "
+"方法的修飾器被稱為非資料描述符（non-data "
+"descriptor）（通常用於方法，但也有其他用途）。"
 
 #: ../../howto/descriptor.rst:539
 msgid ""
@@ -467,6 +496,9 @@ msgid ""
 "takes precedence.  If an instance's dictionary has an entry with the same "
 "name as a non-data descriptor, the dictionary entry takes precedence."
 msgstr ""
+"資料修飾器和非資料修飾器，其在計算物件實例字典中的覆寫時的優先順序有所不同。"
+"如果一個物件實例字典中有一個與資料描述符同名的項目，則資料修飾器優先。如果一"
+"個對象實例字典中有一個與非資料修飾器同名的項目，則字典項目優先。"
 
 #: ../../howto/descriptor.rst:545
 msgid ""
@@ -475,22 +507,26 @@ msgid ""
 "called.  Defining the :meth:`__set__` method with an exception raising "
 "placeholder is enough to make it a data descriptor."
 msgstr ""
+"為了建立一個唯讀資料修飾器，需定義 :meth:__get__ 和 :meth:__set__ 兩個方法，"
+"其中 :meth:__set__ 方法需在被呼叫時拋出 :exc:AttributeError 錯誤。如果定義 "
+":meth:__set__ 方法，其中包含一個拋出例外的佔位符，即足以讓它成為資料修飾器。"
 
 #: ../../howto/descriptor.rst:552
 msgid "Overview of descriptor invocation"
-msgstr ""
+msgstr "概述修飾器的調用"
 
 #: ../../howto/descriptor.rst:554
 msgid ""
 "A descriptor can be called directly with ``desc.__get__(obj)`` or ``desc."
 "__get__(None, cls)``."
-msgstr ""
+msgstr "一個修飾器可以直接使用 ``desc.__get__(obj)`` 或 ``desc.__get__(None, cls)`` "
+"被呼叫，。"
 
 #: ../../howto/descriptor.rst:557
 msgid ""
 "But it is more common for a descriptor to be invoked automatically from "
 "attribute access."
-msgstr ""
+msgstr "但從屬性存取自動調用修飾器更為常見。"
 
 #: ../../howto/descriptor.rst:560
 msgid ""
@@ -499,12 +535,15 @@ msgid ""
 "instance ``__dict__``, its :meth:`__get__` method is invoked according to "
 "the precedence rules listed below."
 msgstr ""
+"表達式 ``obj.x`` 會在 ``obj`` 的 namespace 鏈中尋找屬性 ``x``。"
+"如果搜尋到一個在實例的 ``__dict__`` 以外的修飾器，會根據下面的優先順序調用其 "
+":meth:`__get__` 方法。"
 
 #: ../../howto/descriptor.rst:565
 msgid ""
 "The details of invocation depend on whether ``obj`` is an object, class, or "
 "instance of super."
-msgstr ""
+msgstr "當 ``obj`` 是物件、類別或 super 的實例時，其呼叫的細節會有所不同。"
 
 #: ../../howto/descriptor.rst:570
 msgid "Invocation from an instance"
