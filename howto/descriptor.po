@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-26 12:31+0000\n"
-"Last-Translator: raymond <raymond727341@gmail.com>\n"
+"Last-Translator: 鍾禕宸 <eason.chung9@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: descriptor\n"
@@ -721,7 +721,8 @@ msgstr "類別從 :class:`object`、:class:`type` 或 :func:`super` 繼承此機
 msgid ""
 "Overriding :meth:`__getattribute__` prevents automatic descriptor calls "
 "because all the descriptor logic is in that method."
-msgstr ""
+msgstr "覆寫 :meth: ` __getattribute__ ` "
+"方法會阻止自動調用修飾器，因為所有修飾器的邏輯都在該方法中。"
 
 #: ../../howto/descriptor.rst:819
 msgid ""
@@ -730,18 +731,21 @@ msgid ""
 "include the class.  The second puts in ``None`` for the instance and always "
 "includes the class."
 msgstr ""
+":meth: ` object.__getattribute__ ` 和 :meth: ` type.__getattribute__ ` 對 "
+":meth: ` __get__ `方法進行不同的調用。第一個方法包括實例並且可能包括類別。"
+"而第二個方法將實例設置為 ` ` None ` `，並且始終將類別包含在內。"
 
 #: ../../howto/descriptor.rst:824
 msgid "Data descriptors always override instance dictionaries."
-msgstr ""
+msgstr "資料修飾器總是優先於實例字典。"
 
 #: ../../howto/descriptor.rst:826
 msgid "Non-data descriptors may be overridden by instance dictionaries."
-msgstr ""
+msgstr "非資料修飾器可能會被實例字典覆寫。"
 
 #: ../../howto/descriptor.rst:830
 msgid "Automatic name notification"
-msgstr ""
+msgstr "自動名稱通知"
 
 #: ../../howto/descriptor.rst:832
 msgid ""
@@ -752,12 +756,19 @@ msgid ""
 "with two arguments.  The *owner* is the class where the descriptor is used, "
 "and the *name* is the class variable the descriptor was assigned to."
 msgstr ""
+"有時候，一個修飾器希望知道它被分配給了哪個類別變量名稱。當一個新的類別被創建"
+"時，:class: ` type ` 元類會掃描新類別的字典。"
+"如果其中任何一個項目是修飾器且它們定義了 :meth: ` __set_name__ ` "
+"方法，該方法將被兩個參數調用。 * owner * 是使用修飾器的類別， * name * "
+"是修飾器被分配給的類別變量名稱。"
 
 #: ../../howto/descriptor.rst:839
 msgid ""
 "The implementation details are in :c:func:`type_new()` and :c:func:"
 "`set_names()` in :source:`Objects/typeobject.c`."
 msgstr ""
+"詳細的細節可以在 :source: ` Objects/typeobject.c ` 中的 :c:func: ` type_new()"
+" ` 和 :c:func: ` set_names() ` 中找到。"
 
 #: ../../howto/descriptor.rst:842
 msgid ""
@@ -765,6 +776,9 @@ msgid ""
 "place at the time of class creation.  If descriptors are added to the class "
 "afterwards, :meth:`__set_name__` will need to be called manually."
 msgstr ""
+"由於更新邏輯在 :meth: ` type.__new__ ` "
+"中，因此通知只在類別創建時發生。如果在之後向類別中添加修飾器，則需要手動調用 "
+":meth: ` __set_name__ `。"
 
 #: ../../howto/descriptor.rst:848
 msgid "ORM example"
@@ -776,13 +790,17 @@ msgid ""
 "could be used to implement an `object relational mapping <https://en."
 "wikipedia.org/wiki/Object%E2%80%93relational_mapping>`_."
 msgstr ""
+"以下的程式碼是一個簡化的範例，展示了如何使用資料修飾器來實現 ` object "
+"relational mapping <https://en.wikipedia.org/wiki/"
+"Object%E2%80%93relational_mapping>`_。"
 
 #: ../../howto/descriptor.rst:854
 msgid ""
 "The essential idea is that the data is stored in an external database.  The "
 "Python instances only hold keys to the database's tables.  Descriptors take "
 "care of lookups or updates:"
-msgstr ""
+msgstr "基礎想法是將資料存儲在外部資料庫中，而 Python "
+"的實例只持有對資料庫的關鍵字。修飾器負責查找或更新的工作:"
 
 #: ../../howto/descriptor.rst:873
 msgid ""
@@ -790,20 +808,22 @@ msgid ""
 "org/wiki/Database_model>`_ that describe the schema for each table in a "
 "database:"
 msgstr ""
+"我們可以使用 :class: ` Field ` 類別來定義 `models <https://en.wikipedia.org/"
+"wiki/Database_model>`_用於描述資料庫中每個表的結構:"
 
 #: ../../howto/descriptor.rst:898
 msgid "To use the models, first connect to the database::"
-msgstr ""
+msgstr "要使用模型，則要先連接至資料庫::"
 
 #: ../../howto/descriptor.rst:903
 msgid ""
 "An interactive session shows how data is retrieved from the database and how "
 "it can be updated:"
-msgstr ""
+msgstr "以下互動會話展示如何從資料庫中檢索資料以及如何進行更新:"
 
 #: ../../howto/descriptor.rst:948
 msgid "Pure Python Equivalents"
-msgstr ""
+msgstr "純Python 等效代碼"
 
 #: ../../howto/descriptor.rst:950
 msgid ""
@@ -812,28 +832,33 @@ msgid ""
 "in tools. Properties, bound methods, static methods, class methods, and \\_"
 "\\_slots\\_\\_ are all based on the descriptor protocol."
 msgstr ""
+"修飾器協定是一個簡單且提供更多可能性的協定。其中有幾個情形已經常見到被預載為"
+"內建工具。屬性、綁定方法、靜態方法、類別方法以及 \\_\\_slots\\_\\_ "
+"都是基於修飾器協定的。"
 
 #: ../../howto/descriptor.rst:957
 msgid "Properties"
-msgstr ""
+msgstr "屬性"
 
 #: ../../howto/descriptor.rst:959
 msgid ""
 "Calling :func:`property` is a succinct way of building a data descriptor "
 "that triggers a function call upon access to an attribute.  Its signature "
 "is::"
-msgstr ""
+msgstr "呼叫 :func: ` property ` 是一種簡潔的建立數據修飾器的方法，當訪問屬性被觸發時"
+"將調用函數。它的特徵如下所示："
 
 #: ../../howto/descriptor.rst:964
 msgid ""
 "The documentation shows a typical use to define a managed attribute ``x``:"
-msgstr ""
+msgstr "文檔中展示了定義一個受管理的屬性 ` ` x ` ` 的典型用法："
 
 #: ../../howto/descriptor.rst:988
 msgid ""
 "To see how :func:`property` is implemented in terms of the descriptor "
 "protocol, here is a pure Python equivalent:"
-msgstr ""
+msgstr "要了解 :func: ` property ` 如何基於修飾器協定實現，以下是一個純 Python "
+"等效代碼:"
 
 #: ../../howto/descriptor.rst:1091
 msgid ""
