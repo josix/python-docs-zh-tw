@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-26 12:31+0000\n"
-"Last-Translator: Josix <josixwang@gmail.com>\n"
+"Last-Translator: andyjjrt <andyjjrt@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: descriptor\n"
@@ -584,7 +584,7 @@ msgstr "當 ``obj`` 是物件、類別或 super 的實例時，其呼叫的細�
 
 #: ../../howto/descriptor.rst:570
 msgid "Invocation from an instance"
-msgstr ""
+msgstr "從實例調用"
 
 #: ../../howto/descriptor.rst:572
 msgid ""
@@ -593,18 +593,21 @@ msgid ""
 "descriptors, then class variables, and lastly :meth:`__getattr__` if it is "
 "provided."
 msgstr ""
+"實例查找會掃描一系列命名空間，賦予數據修飾器最高的優先級，其次是實例變量，然"
+"後是非數據修飾器，然後是類變量，最後是 :meth:`__getattr__`（如果有的話）。"
 
 #: ../../howto/descriptor.rst:577
 msgid ""
 "If a descriptor is found for ``a.x``, then it is invoked with: ``desc."
 "__get__(a, type(a))``."
-msgstr ""
+msgstr "如果找到 ``a.x`` 的修飾器，則使用 ``desc.__get__(a, type(a))`` 調用它。"
 
 #: ../../howto/descriptor.rst:580
 msgid ""
 "The logic for a dotted lookup is in :meth:`object.__getattribute__`.  Here "
 "is a pure Python equivalent:"
-msgstr ""
+msgstr "點號查找的邏輯在 :meth:`object.__getattribute__` 中。以下是等效的純 Python "
+"程式碼："
 
 #: ../../howto/descriptor.rst:719
 msgid ""
@@ -612,6 +615,9 @@ msgid ""
 "code.  That is why calling :meth:`__getattribute__` directly or with "
 "``super().__getattribute__`` will bypass :meth:`__getattr__` entirely."
 msgstr ""
+"值得注意的是，在 :meth:`__getattribute__` 代碼中沒有 :meth:`__getattr__` "
+"鉤子（Hook）。這就是為什麼直接調用 :meth:`__getattribute__` 或使用 ``super()."
+"__getattribute__`` 會繞過 :meth:`__getattr__` 的原因。"
 
 #: ../../howto/descriptor.rst:723
 msgid ""
@@ -620,10 +626,12 @@ msgid ""
 "`__getattribute__` raises an :exc:`AttributeError`.  Their logic is "
 "encapsulated in a helper function:"
 msgstr ""
+"而是點運算符和 :func:`getattr` 函數負責在 :meth:`__getattribute__` 觸發 "
+":exc:`AttributeError` 時調用 :meth:`__getattr__`。這些邏輯封裝在輔助函式中："
 
 #: ../../howto/descriptor.rst:773
 msgid "Invocation from a class"
-msgstr ""
+msgstr "從類別調用"
 
 #: ../../howto/descriptor.rst:775
 msgid ""
@@ -632,26 +640,33 @@ msgid ""
 "__getattribute__` but the instance dictionary lookup is replaced by a search "
 "through the class's :term:`method resolution order`."
 msgstr ""
+"點號查找（如 ``A.x``）的邏輯在 :meth:`type.__getattribute__` 中。其方法與 "
+":meth:`object.__getattribute__` 相似，但實例字典查找被替換為搜索類的 "
+":term:`方法解析順序`。"
 
 #: ../../howto/descriptor.rst:780
 msgid "If a descriptor is found, it is invoked with ``desc.__get__(None, A)``."
-msgstr ""
+msgstr "如果找到修飾器，則調用 ``desc.__get__(None, A)`` 。"
 
 #: ../../howto/descriptor.rst:782
 msgid ""
 "The full C implementation can be found in :c:func:`type_getattro()` and :c:"
 "func:`_PyType_Lookup()` in :source:`Objects/typeobject.c`."
 msgstr ""
+"完整的 C 實現可以在 :source:`Objects/typeobject.c` 中的 "
+":c:func:`type_getattro()` 和 :c:func:`_PyType_Lookup()` 中找到。"
 
 #: ../../howto/descriptor.rst:787
+#, fuzzy
 msgid "Invocation from super"
-msgstr ""
+msgstr "從 super 調用"
 
 #: ../../howto/descriptor.rst:789
+#, fuzzy
 msgid ""
 "The logic for super's dotted lookup is in the :meth:`__getattribute__` "
 "method for object returned by :class:`super()`."
-msgstr ""
+msgstr "super 的點號查找邏輯在回傳對象的 :meth:`__getattribute__` 方法中。"
 
 #: ../../howto/descriptor.rst:792
 msgid ""
@@ -660,6 +675,9 @@ msgid ""
 "returns ``B.__dict__['m'].__get__(obj, A)``.  If not a descriptor, ``m`` is "
 "returned unchanged."
 msgstr ""
+"像 ``super(A, obj).m`` 這樣的點號查找會在 ``obj.__class__.__mro__`` "
+"中搜索跟在 ``A`` 後面的基礎類別 ``B``，然後返回 ``B.__dict__['m'].__get__("
+"obj, A)``。如果不是修飾器，則返回未改變的 ``m``。"
 
 #: ../../howto/descriptor.rst:797
 msgid ""
@@ -668,30 +686,36 @@ msgid ""
 "`Guido's Tutorial <https://www.python.org/download/releases/2.2.3/descrintro/"
 "#cooperation>`_."
 msgstr ""
+"完整的 C 實現可以在 :source:`Objects/typeobject.c` 的 "
+":c:func:`super_getattro()` 中找到。在 `Guido's Tutorial <https://www.python."
+"org/download/releases/2.2.3/descrintro/#cooperation>`_ 中也可以找到一個純 "
+"Python 的等效版本。"
 
 #: ../../howto/descriptor.rst:804
 msgid "Summary of invocation logic"
-msgstr ""
+msgstr "調用邏輯的總結"
 
 #: ../../howto/descriptor.rst:806
 msgid ""
 "The mechanism for descriptors is embedded in the :meth:`__getattribute__()` "
 "methods for :class:`object`, :class:`type`, and :func:`super`."
 msgstr ""
+"修飾器的機制嵌入在 :class:`object`、:class:`type` 和 :func:`super` 的 "
+":meth:`__getattribute__()` 方法中。"
 
 #: ../../howto/descriptor.rst:809
 msgid "The important points to remember are:"
-msgstr ""
+msgstr "幾項需要記得的要點："
 
 #: ../../howto/descriptor.rst:811
 msgid "Descriptors are invoked by the :meth:`__getattribute__` method."
-msgstr ""
+msgstr "修飾器是透過 :meth:`__getattribute__` 方法調用的。"
 
 #: ../../howto/descriptor.rst:813
 msgid ""
 "Classes inherit this machinery from :class:`object`, :class:`type`, or :func:"
 "`super`."
-msgstr ""
+msgstr "類別從 :class:`object`、:class:`type` 或 :func:`super` 繼承此機制。"
 
 #: ../../howto/descriptor.rst:816
 msgid ""
