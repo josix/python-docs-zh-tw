@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-27 13:31+0000\n"
-"Last-Translator: 鍾禕宸 <eason.chung9@gmail.com>\n"
+"Last-Translator: Josix <josixwang@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: descriptor\n"
@@ -657,12 +657,10 @@ msgstr ""
 ":c:func:`type_getattro()` 和 :c:func:`_PyType_Lookup()` 中找到。"
 
 #: ../../howto/descriptor.rst:787
-#, fuzzy
 msgid "Invocation from super"
 msgstr "從 super 調用"
 
 #: ../../howto/descriptor.rst:789
-#, fuzzy
 msgid ""
 "The logic for super's dotted lookup is in the :meth:`__getattribute__` "
 "method for object returned by :class:`super()`."
@@ -949,6 +947,10 @@ msgid ""
 "Dotted access from a class calls :meth:`__get__` which just returns the "
 "underlying function unchanged::"
 msgstr ""
+"從類別呼叫的點運算子會呼叫 :meth:`__get__` "
+"方法，該方法會原封不動地返回底層函式：\n"
+"\n"
+"::"
 
 #: ../../howto/descriptor.rst:1188
 msgid ""
