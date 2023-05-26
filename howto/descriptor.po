@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
 "PO-Revision-Date: 2023-05-26 12:31+0000\n"
-"Last-Translator: andyjjrt <andyjjrt@gmail.com>\n"
+"Last-Translator: raymond <raymond727341@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: descriptor\n"
@@ -840,7 +840,8 @@ msgid ""
 "The :func:`property` builtin helps whenever a user interface has granted "
 "attribute access and then subsequent changes require the intervention of a "
 "method."
-msgstr ""
+msgstr ":func:`property` 內建函式可以在使用者介面授權屬性訪問許可後，當需要介入方法進"
+"行後續更改時提供幫助。"
 
 #: ../../howto/descriptor.rst:1095
 msgid ""
@@ -851,22 +852,27 @@ msgid ""
 "solution is to wrap access to the value attribute in a property data "
 "descriptor:"
 msgstr ""
+"例如，試算表類別可能通過 ``Cell('b10').value`` 授權訪問單元格值。程式的後續改"
+"進需要在每次訪問時重新計算單元格；然而，程式設計師不希望影響直接訪問屬性的現"
+"有客戶端程式碼。 解決方案是將對值屬性的訪問封裝在屬性數據修飾器中："
 
 #: ../../howto/descriptor.rst:1112
 msgid ""
 "Either the built-in :func:`property` or our :func:`Property` equivalent "
 "would work in this example."
-msgstr ""
+msgstr "在這個例子中，內建的 :func:`property` 或我們自己的 :func:`Property` "
+"等效函式都可以使用。"
 
 #: ../../howto/descriptor.rst:1117
 msgid "Functions and methods"
-msgstr ""
+msgstr "函式和方法"
 
 #: ../../howto/descriptor.rst:1119
 msgid ""
 "Python's object oriented features are built upon a function based "
 "environment. Using non-data descriptors, the two are merged seamlessly."
-msgstr ""
+msgstr "Python 的物件導向功能是建立在基於函式的環境之上的。使用非數據修飾器，這兩者可"
+"以無縫地合併。"
 
 #: ../../howto/descriptor.rst:1122
 msgid ""
@@ -875,12 +881,15 @@ msgid ""
 "prepended to the other arguments.  By convention, the instance is called "
 "*self* but could be called *this* or any other variable name."
 msgstr ""
+"當調用存儲在類字典中的函式時，它們會轉化為方法。方法只與常規函式不同之處在於"
+"，對象實例被添加到其他引數之前。按照慣例，對象實例被稱為 *self*，"
+"但也可以稱為 *this* 或任何其他變數名稱。"
 
 #: ../../howto/descriptor.rst:1127
 msgid ""
 "Methods can be created manually with :class:`types.MethodType` which is "
 "roughly equivalent to:"
-msgstr ""
+msgstr "使用 :class:`types.MethodType` 可以手動創建方法，這與以下操作大致相同："
 
 #: ../../howto/descriptor.rst:1144
 msgid ""
@@ -889,23 +898,26 @@ msgid ""
 "that functions are non-data descriptors that return bound methods during "
 "dotted lookup from an instance.  Here's how it works:"
 msgstr ""
+"為了支持方法的自動創建，函式包含 :meth:`__get__` 方法以在訪問屬性期間綁定方法"
+"。這意味著函式是非數據修飾器，在從實例進行點號查找期間返回綁定的方法。以下是"
+"它的工作原理："
 
 #: ../../howto/descriptor.rst:1160
 msgid ""
 "Running the following class in the interpreter shows how the function "
 "descriptor works in practice:"
-msgstr ""
+msgstr "在解釋器中運行以下類別可以展示函式修飾器在實踐中的工作方式："
 
 #: ../../howto/descriptor.rst:1169
 msgid ""
 "The function has a :term:`qualified name` attribute to support introspection:"
-msgstr ""
+msgstr "這個函式具有:term:`qualified name`屬性以支持內省:"
 
 #: ../../howto/descriptor.rst:1176
 msgid ""
 "Accessing the function through the class dictionary does not invoke :meth:"
 "`__get__`.  Instead, it just returns the underlying function object::"
-msgstr ""
+msgstr "通過類字典訪問函式不會引用 :meth:`__get__`。相反，它只返回底層的函數物件："
 
 #: ../../howto/descriptor.rst:1182
 msgid ""
@@ -917,29 +929,31 @@ msgstr ""
 msgid ""
 "The interesting behavior occurs during dotted access from an instance.  The "
 "dotted lookup calls :meth:`__get__` which returns a bound method object::"
-msgstr ""
+msgstr "有趣的行為發生在從實例進行點號訪問時。這種點號查找調用 "
+":meth:`__get__`，該方法返回一個綁定的方對象："
 
 #: ../../howto/descriptor.rst:1195
 msgid ""
 "Internally, the bound method stores the underlying function and the bound "
 "instance::"
-msgstr ""
+msgstr "在內部，綁定方法存儲底層函數和綁定實例::"
 
 #: ../../howto/descriptor.rst:1204
 msgid ""
 "If you have ever wondered where *self* comes from in regular methods or "
 "where *cls* comes from in class methods, this is it!"
-msgstr ""
+msgstr "如果您曾經想過常規方法中的 *self* 來自哪裡，或者類方法中的 *cls* "
+"來自哪裡，這就是答案！"
 
 #: ../../howto/descriptor.rst:1209
 msgid "Kinds of methods"
-msgstr ""
+msgstr "方法的種類"
 
 #: ../../howto/descriptor.rst:1211
 msgid ""
 "Non-data descriptors provide a simple mechanism for variations on the usual "
 "patterns of binding functions into methods."
-msgstr ""
+msgstr "非數據修飾器為將函數綁定為方法的常規模式提供了簡單的變化機制。"
 
 #: ../../howto/descriptor.rst:1214
 msgid ""
@@ -948,14 +962,17 @@ msgid ""
 "transforms an ``obj.f(*args)`` call into ``f(obj, *args)``.  Calling ``cls."
 "f(*args)`` becomes ``f(*args)``."
 msgstr ""
+"總結一下，函式具有 :meth:`__get__` "
+"方法，因此它們可以在被訪問為屬性時轉換為方法。非數據修飾器將 ``obj.f(*args)``"
+" 調用轉換為 ``f(obj, *args)``。調用 ``cls.f(*args)`` 變成了 ``f(*args)``。"
 
 #: ../../howto/descriptor.rst:1219
 msgid "This chart summarizes the binding and its two most useful variants:"
-msgstr ""
+msgstr "下表概述了綁定及其兩個最有用的變體："
 
 #: ../../howto/descriptor.rst:1222
 msgid "Transformation"
-msgstr ""
+msgstr "轉換"
 
 #: ../../howto/descriptor.rst:1222
 msgid "Called from an object"
