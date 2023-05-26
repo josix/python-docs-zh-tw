@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: Python 3.11\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-10-15 20:43+0000\n"
-"PO-Revision-Date: 2023-05-12 12:28+0000\n"
-"Last-Translator: 鍾禕宸 <eason.chung9@gmail.com>\n"
+"PO-Revision-Date: 2023-05-26 12:31+0000\n"
+"Last-Translator: Josix <josixwang@gmail.com>\n"
 "Language-Team: Chinese - TAIWAN (https://github.com/python/python-docs-zh-tw)"
 "\n"
 "Language: descriptor\n"
@@ -306,14 +306,16 @@ msgstr "修飾器（Descriptors）只有在作為類別變數時才有效。如�
 msgid ""
 "The main motivation for descriptors is to provide a hook allowing objects "
 "stored in class variables to control what happens during attribute lookup."
-msgstr ""
+msgstr "主要的動機是為了提供一個鉤子（Hook），讓存儲在類變數中的物件在屬性查找期間控"
+"制發生的事情。"
 
 #: ../../howto/descriptor.rst:315
 msgid ""
 "Traditionally, the calling class controls what happens during lookup. "
 "Descriptors invert that relationship and allow the data being looked-up to "
 "have a say in the matter."
-msgstr ""
+msgstr "傳統上，呼叫類別控制查找期間的過程。修飾器將此關係倒轉並允許被查找的資料發表"
+"意見。"
 
 #: ../../howto/descriptor.rst:319
 msgid ""
@@ -322,20 +324,24 @@ msgid ""
 "`staticmethod`, :func:`property`, and :func:`functools.cached_property` are "
 "all implemented as descriptors."
 msgstr ""
+"修飾器在語言中被廣泛使用。這是函數如何變成綁定方法的作法。常用的工具例如 "
+":func:`classmethod`、:func:`staticmethod`、:func:`property` 和 "
+":func:`functools.cached_property` 都是以修飾器實現的。"
 
 #: ../../howto/descriptor.rst:326
 msgid "Complete Practical Example"
-msgstr ""
+msgstr "完整實例"
 
 #: ../../howto/descriptor.rst:328
 msgid ""
 "In this example, we create a practical and powerful tool for locating "
 "notoriously hard to find data corruption bugs."
-msgstr ""
+msgstr "在這個範例中，我們建立了一個實用而強大的工具，用於定位非常難以找到的資料損壞"
+"錯誤。"
 
 #: ../../howto/descriptor.rst:333
 msgid "Validator class"
-msgstr ""
+msgstr "驗證器類別"
 
 #: ../../howto/descriptor.rst:335
 msgid ""
@@ -344,31 +350,37 @@ msgid ""
 "restrictions.  If those restrictions aren't met, it raises an exception to "
 "prevent data corruption at its source."
 msgstr ""
+"一個 validator 是用來管理屬性存取的修飾器。在儲存任何資料之前，它會驗證新值是"
+"否符合各種類型和範圍限制。如果這些限制沒有被滿足，它會拋出異常以防止數據在源"
+"頭上被破壞。"
 
 #: ../../howto/descriptor.rst:340
 msgid ""
 "This :class:`Validator` class is both an :term:`abstract base class` and a "
 "managed attribute descriptor:"
-msgstr ""
+msgstr "這個 :class:`Validator` 類別同時是個 :term:`abstract base class` "
+"和一個被管理的屬性修飾器："
 
 #: ../../howto/descriptor.rst:363
 msgid ""
 "Custom validators need to inherit from :class:`Validator` and must supply a :"
 "meth:`validate` method to test various restrictions as needed."
 msgstr ""
+"自訂驗證器需要繼承 :class:`Validator` 類別，並且必須提供一個 :meth:`validate`"
+" 方法，以便根據需要測試各種限制。"
 
 #: ../../howto/descriptor.rst:368
 msgid "Custom validators"
-msgstr ""
+msgstr "自定義驗證器"
 
 #: ../../howto/descriptor.rst:370
 msgid "Here are three practical data validation utilities:"
-msgstr ""
+msgstr "以下是三個實用的資料驗證工具："
 
 #: ../../howto/descriptor.rst:372
 msgid ""
 ":class:`OneOf` verifies that a value is one of a restricted set of options."
-msgstr ""
+msgstr "class:`OneOf` 用於驗證某個值是否屬於一組限制選項中的其中之一。"
 
 #: ../../howto/descriptor.rst:374
 msgid ""
@@ -376,6 +388,8 @@ msgid ""
 "`float`.  Optionally, it verifies that a value is between a given minimum or "
 "maximum."
 msgstr ""
+":class:`Number` 會驗證一個值是否為 :class:`int` 或 "
+":class:`float`，同時可以選擇性地驗證該值是否在給定的最小值和最大值之間。"
 
 #: ../../howto/descriptor.rst:378
 msgid ""
@@ -384,22 +398,25 @@ msgid ""
 "`predicate <https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)>`_ "
 "as well."
 msgstr ""
+":class:`String` 可以驗證值是否為 :class:`str` "
+"。此外，它還可以驗證給定的最小或最大長度。它也可以驗證使用者定義的 `"
+"predicate <https://en.wikipedia.org/wiki/Predicate_(mathematical_logic)>`_ 。"
 
 #: ../../howto/descriptor.rst:437
 msgid "Practical application"
-msgstr ""
+msgstr "實例應用"
 
 #: ../../howto/descriptor.rst:439
 msgid "Here's how the data validators can be used in a real class:"
-msgstr ""
+msgstr "以下是資料驗證器在真實類別中的使用方式："
 
 #: ../../howto/descriptor.rst:454
 msgid "The descriptors prevent invalid instances from being created:"
-msgstr ""
+msgstr "這些修飾器可以防止無效的實例被建立："
 
 #: ../../howto/descriptor.rst:481
 msgid "Technical Tutorial"
-msgstr ""
+msgstr "技術教程"
 
 #: ../../howto/descriptor.rst:483
 msgid ""
@@ -918,11 +935,11 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:1222
 msgid "Called from an object"
-msgstr ""
+msgstr "自物件呼叫"
 
 #: ../../howto/descriptor.rst:1222
 msgid "Called from a class"
-msgstr ""
+msgstr "自類別呼叫"
 
 #: ../../howto/descriptor.rst:1225
 msgid "function"
@@ -938,11 +955,11 @@ msgstr "f(\\*args)"
 
 #: ../../howto/descriptor.rst:1227
 msgid "staticmethod"
-msgstr "staticmethod"
+msgstr "靜態類別（staticmethod）"
 
 #: ../../howto/descriptor.rst:1229
 msgid "classmethod"
-msgstr "classmethod"
+msgstr "類別方法（classmethod）"
 
 #: ../../howto/descriptor.rst:1229
 msgid "f(type(obj), \\*args)"
@@ -954,7 +971,7 @@ msgstr "f(cls, \\*args)"
 
 #: ../../howto/descriptor.rst:1234
 msgid "Static methods"
-msgstr ""
+msgstr "靜態方法"
 
 #: ../../howto/descriptor.rst:1236
 msgid ""
@@ -964,12 +981,15 @@ msgid ""
 "result, the function becomes identically accessible from either an object or "
 "a class."
 msgstr ""
+"靜態方法會不做任何改變地回傳底層函式。呼叫 ``c.f`` 或 ``C.f`` 等價於直接查找 "
+"``object.__getattribute__(c, \"f\")`` 或 ``object.__getattribute__(C, \"f\""
+")`` 。因此，函式可以從物件或類別完全相同地存取。"
 
 #: ../../howto/descriptor.rst:1242
 msgid ""
 "Good candidates for static methods are methods that do not reference the "
 "``self`` variable."
-msgstr ""
+msgstr "靜態方法的好範例是不需要參考 ``self`` 變數的方法。"
 
 #: ../../howto/descriptor.rst:1245
 msgid ""
@@ -982,29 +1002,36 @@ msgid ""
 "particular dataset. It can be called either from an object or the class:  "
 "``s.erf(1.5) --> .9332`` or ``Sample.erf(1.5) --> .9332``."
 msgstr ""
+"比方說，一個統計套件可能會包含一個用於實驗數據的容器類別。該類別提供了常規方"
+"法來計算平均值、中位數和其他依賴於數據的描述性統計值。然而，可能會存在一些有"
+"用的函數，它們在概念上相關，但不依賴於資料。例如，``erf(x)`` 是在統計工作中常"
+"用的轉換例行事務，但並不直接依賴於特定的資料集。它可以從物件或類中調用：``s."
+"erf(1.5) --> .9332`` 或 ``Sample.erf(1.5) --> .9332``。"
 
 #: ../../howto/descriptor.rst:1254
 msgid ""
 "Since static methods return the underlying function with no changes, the "
 "example calls are unexciting:"
-msgstr ""
+msgstr "由於靜態方法不做任何更改就回傳底層函式，所以這些範例呼叫令人感到無趣："
 
 #: ../../howto/descriptor.rst:1271
 msgid ""
 "Using the non-data descriptor protocol, a pure Python version of :func:"
 "`staticmethod` would look like this:"
-msgstr ""
+msgstr "使用非資料修飾器協議，一個純 Python 版本的 :func:`staticmethod` "
+"看起來像這樣："
 
 #: ../../howto/descriptor.rst:1310
 msgid "Class methods"
-msgstr ""
+msgstr "類別方法"
 
 #: ../../howto/descriptor.rst:1312
 msgid ""
 "Unlike static methods, class methods prepend the class reference to the "
 "argument list before calling the function.  This format is the same for "
 "whether the caller is an object or a class:"
-msgstr ""
+msgstr "不同於靜態方法，類別方法在調用函數前會在參數列表前加上類別參考。 "
+"無論調用者是物件還是類，這個格式都是一樣的："
 
 #: ../../howto/descriptor.rst:1330
 msgid ""
@@ -1014,16 +1041,19 @@ msgid ""
 "the classmethod :func:`dict.fromkeys` creates a new dictionary from a list "
 "of keys.  The pure Python equivalent is:"
 msgstr ""
+"這種行為在方法只需要類別參考並且不依賴於特定實例中存儲的資料時非常有用。使用"
+"類別方法的一個用途是建立替代的類建造函數。例如，classmethod :func:`dict."
+"fromkeys` 從鍵列表創建一個新的字典。純 Python 等效於："
 
 #: ../../howto/descriptor.rst:1347
 msgid "Now a new dictionary of unique keys can be constructed like this:"
-msgstr ""
+msgstr "現在可以這樣建立一個唯一鍵的新字典："
 
 #: ../../howto/descriptor.rst:1357
 msgid ""
 "Using the non-data descriptor protocol, a pure Python version of :func:"
 "`classmethod` would look like this:"
-msgstr ""
+msgstr "使用資料修飾器協議，:func:`classmethod` 的純 Python 版本如下："
 
 #: ../../howto/descriptor.rst:1408
 msgid ""
@@ -1032,29 +1062,35 @@ msgid ""
 "decorators.  For example, a classmethod and property could be chained "
 "together.  In Python 3.11, this functionality was deprecated."
 msgstr ""
+"Python 3.9 新增了對於 ``hasattr(type(self.f), '__get__')`` 這條路徑的支援，"
+"進而使 :func:`classmethod` 能夠支援鏈式裝飾器（Chained "
+"Decorator）。例如，可以將類別方法和屬性串連在一起。然而在 Python 3.11 "
+"中，此功能已被棄用。"
 
 #: ../../howto/descriptor.rst:1428
 msgid "Member objects and __slots__"
-msgstr ""
+msgstr "成員物件和 __slots__"
 
 #: ../../howto/descriptor.rst:1430
 msgid ""
 "When a class defines ``__slots__``, it replaces instance dictionaries with a "
 "fixed-length array of slot values.  From a user point of view that has "
 "several effects:"
-msgstr ""
+msgstr "當一個類別定義了 ``__slots__``，它會將實例字典替換成一個固定長度的 slot "
+"值陣列。從使用者的角度來看，這會有幾個影響："
 
 #: ../../howto/descriptor.rst:1434
 msgid ""
 "1. Provides immediate detection of bugs due to misspelled attribute "
 "assignments.  Only attribute names specified in ``__slots__`` are allowed:"
-msgstr ""
+msgstr "1. 提供立即偵測因屬性名稱錯誤所導致的錯誤。只有在 ``__slots__`` "
+"中指定的屬性名稱才是被允許的："
 
 #: ../../howto/descriptor.rst:1450
 msgid ""
 "2. Helps create immutable objects where descriptors manage access to private "
 "attributes stored in ``__slots__``:"
-msgstr ""
+msgstr "2. 使用修飾器管理 ``__slots__`` 中存儲的私有屬性，有助於建立不可變物件："
 
 #: ../../howto/descriptor.rst:1485
 msgid ""
@@ -1063,18 +1099,26 @@ msgid ""
 "design pattern <https://en.wikipedia.org/wiki/Flyweight_pattern>`_ likely "
 "only matters when a large number of instances are going to be created."
 msgstr ""
+"3. 使用 `__slots__` 的情況下可以節省記憶體，64 位元的 Linux "
+"版本中，一個有兩個屬性的實例，使用 `__slots__` 時佔用 48 個位元組，"
+"沒有使用時佔用 152 個位元組。這個 `flyweight design pattern <https://en."
+"wikipedia.org/wiki/Flyweight_pattern>`_ "
+"，只有在需要建立大量實例的情況下才有意義。"
 
 #: ../../howto/descriptor.rst:1490
 msgid ""
 "4. Improves speed.  Reading instance variables is 35% faster with "
 "``__slots__`` (as measured with Python 3.10 on an Apple M1 processor)."
 msgstr ""
+"4. 提升速度。在 Apple M1 處理器上使用 Python 3.10 測試，使用 ``__slots__`` "
+"讀取實例變數可提升 35% 的速度。"
 
 #: ../../howto/descriptor.rst:1493
 msgid ""
 "5. Blocks tools like :func:`functools.cached_property` which require an "
 "instance dictionary to function correctly:"
-msgstr ""
+msgstr "5. 阻斷對於像 :func:`functools.cached_property` "
+"這樣需要實例字典才能正確運作的工具："
 
 #: ../../howto/descriptor.rst:1515
 msgid ""
@@ -1085,6 +1129,9 @@ msgid ""
 "``_slotvalues`` list.  Reads and writes to that private structure are "
 "managed by member descriptors:"
 msgstr ""
+"無法建立完全相同的純 Python 版本的 ``__slots__``，因為它需要直接存取 C "
+"結構和控制物件記憶體配置。但是，我們可以建立一個大致忠實的模擬，其中私有的 "
+"`_slotvalues` 列表模擬了實際的 C 結構。對該私有結構的讀寫由成員修飾器管理："
 
 #: ../../howto/descriptor.rst:1560
 msgid ""
@@ -1118,4 +1165,4 @@ msgstr ""
 
 #: ../../howto/descriptor.rst:1658
 msgid "Misspelled or unassigned attributes will raise an exception:"
-msgstr ""
+msgstr "拼字錯誤或未指定的屬性會引發例外："
