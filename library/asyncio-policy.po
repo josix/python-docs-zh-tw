@@ -2,7 +2,6 @@
 # This file is distributed under the same license as the Python package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Python 3.14\n"
@@ -19,7 +18,7 @@ msgstr ""
 
 #: ../../library/asyncio-policy.rst:8
 msgid "Policies"
-msgstr ""
+msgstr "策略"
 
 #: ../../library/asyncio-policy.rst:12
 msgid ""
@@ -28,6 +27,9 @@ msgid ""
 "the :class:`asyncio.Runner` with *loop_factory* to use the desired loop "
 "implementation."
 msgstr ""
+"策略已棄用，將在 Python 3.16 中移除。"
+"建議使用者使用 :func:`asyncio.run` 函式或搭配 *loop_factory* 的 "
+":class:`asyncio.Runner` 來使用所需的迴圈實作。"
 
 #: ../../library/asyncio-policy.rst:18
 msgid ""
@@ -38,6 +40,13 @@ msgid ""
 "event loop implementations, or substituted by a :ref:`custom policy <asyncio-"
 "custom-policies>` that can override these behaviors."
 msgstr ""
+"事件迴圈策略是一個全域物件，用於取得和設定目前的 "
+":ref:`event loop <asyncio-event-loop>`，以及建立新的事件迴圈。"
+"預設策略可以被 :ref:`replaced <asyncio-policy-get-set>` 為 "
+":ref:`built-in alternatives <asyncio-policy-builtin>` "
+"以使用不同的事件迴圈實作，"
+"或被替換為可以覆寫這些行為的 "
+":ref:`custom policy <asyncio-custom-policies>`。"
 
 #: ../../library/asyncio-policy.rst:27
 msgid ""
@@ -45,6 +54,10 @@ msgid ""
 "event loop per *context*. This is per-thread by default, though custom "
 "policies could define *context* differently."
 msgstr ""
+":ref:`policy object <asyncio-policy-objects>` 會為每個 "
+"*context* 取得和設定獨立的事件迴圈。"
+"預設情況下，這是以每個執行緒為單位，"
+"但自訂策略可以不同地定義 *context*。"
 
 #: ../../library/asyncio-policy.rst:32
 msgid ""
@@ -52,124 +65,146 @@ msgid ""
 "of :func:`get_event_loop`, :func:`set_event_loop`, "
 "and :func:`new_event_loop`."
 msgstr ""
+"自訂事件迴圈策略可以控制 :func:`get_event_loop`、"
+":func:`set_event_loop` 和 :func:`new_event_loop` 的行為。"
 
 #: ../../library/asyncio-policy.rst:35
 msgid ""
 "Policy objects should implement the APIs defined in "
 "the :class:`AbstractEventLoopPolicy` abstract base class."
 msgstr ""
+"策略物件應該實作 :class:`AbstractEventLoopPolicy` "
+"抽象基底類別中定義的 API。"
 
 #: ../../library/asyncio-policy.rst:42
 msgid "Getting and Setting the Policy"
-msgstr ""
+msgstr "取得和設定策略"
 
 #: ../../library/asyncio-policy.rst:44
 msgid ""
 "The following functions can be used to get and set the policy for the "
 "current process:"
-msgstr ""
+msgstr "以下函式可用於取得和設定目前行程的策略："
 
 #: ../../library/asyncio-policy.rst:49
 msgid "Return the current process-wide policy."
-msgstr ""
+msgstr "回傳目前整個行程的策略。"
 
 #: ../../library/asyncio-policy.rst:51
 msgid ""
 "The :func:`get_event_loop_policy` function is deprecated and will be removed "
 "in Python 3.16."
 msgstr ""
+":func:`get_event_loop_policy` 函式已棄用，"
+"將在 Python 3.16 中移除。"
 
 #: ../../library/asyncio-policy.rst:57
 msgid "Set the current process-wide policy to *policy*."
-msgstr ""
+msgstr "將目前整個行程的策略設定為 *policy*。"
 
 #: ../../library/asyncio-policy.rst:59
 msgid "If *policy* is set to ``None``, the default policy is restored."
-msgstr ""
+msgstr "如果 *policy* 被設為 ``None``，則會恢復預設策略。"
 
 #: ../../library/asyncio-policy.rst:61
 msgid ""
 "The :func:`set_event_loop_policy` function is deprecated and will be removed "
 "in Python 3.16."
 msgstr ""
+":func:`set_event_loop_policy` 函式已棄用，"
+"將在 Python 3.16 中移除。"
 
 #: ../../library/asyncio-policy.rst:69
 msgid "Policy Objects"
-msgstr ""
+msgstr "策略物件"
 
 #: ../../library/asyncio-policy.rst:71
 msgid "The abstract event loop policy base class is defined as follows:"
-msgstr ""
+msgstr "抽象事件迴圈策略基底類別的定義如下："
 
 #: ../../library/asyncio-policy.rst:75
 msgid "An abstract base class for asyncio policies."
-msgstr ""
+msgstr "asyncio 策略的抽象基底類別。"
 
 #: ../../library/asyncio-policy.rst:79
 msgid "Get the event loop for the current context."
-msgstr ""
+msgstr "取得目前 context 的事件迴圈。"
 
 #: ../../library/asyncio-policy.rst:81
 msgid ""
 "Return an event loop object implementing the :class:`AbstractEventLoop` "
 "interface."
 msgstr ""
+"回傳一個實作 :class:`AbstractEventLoop` 介面的事件迴圈物件。"
 
 #: ../../library/asyncio-policy.rst:84 ../../library/asyncio-policy.rst:96
 msgid "This method should never return ``None``."
-msgstr ""
+msgstr "此方法不應該回傳 ``None``。"
 
 #: ../../library/asyncio-policy.rst:90
 msgid "Set the event loop for the current context to *loop*."
-msgstr ""
+msgstr "將目前 context 的事件迴圈設定為 *loop*。"
 
 #: ../../library/asyncio-policy.rst:94
 msgid "Create and return a new event loop object."
-msgstr ""
+msgstr "建立並回傳一個新的事件迴圈物件。"
 
 #: ../../library/asyncio-policy.rst:98
 msgid ""
 "The :class:`AbstractEventLoopPolicy` class is deprecated and will be removed "
 "in Python 3.16."
 msgstr ""
+":class:`AbstractEventLoopPolicy` 類別已棄用，"
+"將在 Python 3.16 中移除。"
 
 #: ../../library/asyncio-policy.rst:105
 msgid "asyncio ships with the following built-in policies:"
-msgstr ""
+msgstr "asyncio 附帶以下內建策略："
 
 #: ../../library/asyncio-policy.rst:110
 msgid ""
 "The default asyncio policy.  Uses :class:`SelectorEventLoop` on Unix "
 "and :class:`ProactorEventLoop` on Windows."
 msgstr ""
+"預設的 asyncio 策略。在 Unix 上使用 :class:`SelectorEventLoop`，"
+"在 Windows 上使用 :class:`ProactorEventLoop`。"
 
 #: ../../library/asyncio-policy.rst:113
 msgid ""
 "There is no need to install the default policy manually. asyncio is "
 "configured to use the default policy automatically."
 msgstr ""
+"不需要手動安裝預設策略。"
+"asyncio 已設定為自動使用預設策略。"
 
 #: ../../library/asyncio-policy.rst:118
 msgid "On Windows, :class:`ProactorEventLoop` is now used by default."
-msgstr ""
+msgstr "在 Windows 上，現在預設使用 :class:`ProactorEventLoop`。"
 
 #: ../../library/asyncio-policy.rst:120
 msgid ""
 "The :meth:`get_event_loop` method of the default asyncio policy now raises "
 "a :exc:`RuntimeError` if there is no set event loop."
 msgstr ""
+"如果沒有設定事件迴圈，"
+"預設 asyncio 策略的 :meth:`get_event_loop` 方法現在會引發 "
+":exc:`RuntimeError`。"
 
 #: ../../library/asyncio-policy.rst:124
 msgid ""
 "The :class:`DefaultEventLoopPolicy` class is deprecated and will be removed "
 "in Python 3.16."
 msgstr ""
+":class:`DefaultEventLoopPolicy` 類別已棄用，"
+"將在 Python 3.16 中移除。"
 
 #: ../../library/asyncio-policy.rst:131
 msgid ""
 "An alternative event loop policy that uses the :class:`SelectorEventLoop` "
 "event loop implementation."
 msgstr ""
+"使用 :class:`SelectorEventLoop` 事件迴圈實作的"
+"替代事件迴圈策略。"
 
 #: ../../library/asyncio-policy.rst:134 ../../library/asyncio-policy.rst:146
 msgid "Availability"
@@ -180,22 +215,28 @@ msgid ""
 "The :class:`WindowsSelectorEventLoopPolicy` class is deprecated and will be "
 "removed in Python 3.16."
 msgstr ""
+":class:`WindowsSelectorEventLoopPolicy` 類別已棄用，"
+"將在 Python 3.16 中移除。"
 
 #: ../../library/asyncio-policy.rst:143
 msgid ""
 "An alternative event loop policy that uses the :class:`ProactorEventLoop` "
 "event loop implementation."
 msgstr ""
+"使用 :class:`ProactorEventLoop` 事件迴圈實作的"
+"替代事件迴圈策略。"
 
 #: ../../library/asyncio-policy.rst:148
 msgid ""
 "The :class:`WindowsProactorEventLoopPolicy` class is deprecated and will be "
 "removed in Python 3.16."
 msgstr ""
+":class:`WindowsProactorEventLoopPolicy` 類別已棄用，"
+"將在 Python 3.16 中移除。"
 
 #: ../../library/asyncio-policy.rst:156
 msgid "Custom Policies"
-msgstr ""
+msgstr "自訂策略"
 
 #: ../../library/asyncio-policy.rst:158
 msgid ""
@@ -203,6 +244,9 @@ msgid ""
 "subclass :class:`DefaultEventLoopPolicy` and override the methods for which "
 "custom behavior is wanted, e.g.::"
 msgstr ""
+"要實作新的事件迴圈策略，"
+"建議子類別化 :class:`DefaultEventLoopPolicy` "
+"並覆寫需要自訂行為的方法，例如：::"
 
 #: ../../library/asyncio-policy.rst:162
 msgid ""
