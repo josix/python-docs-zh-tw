@@ -367,6 +367,78 @@ reST 語法注意事項
 
     以下是個程式範例： ::
 
+使用 Claude Skills 協助翻譯
+===========================
+
+本專案在 ``.claude/skills/`` 目錄底下提供三個
+`Claude Code <https://docs.anthropic.com/en/docs/claude-code>`_ 的 Skill，
+協助你依照\ `翻譯守則`_\ 與\ `術語表 Glossary`_\ 進行翻譯與校對。當你在專案
+根目錄啟動 Claude Code 時，這些 Skill 會自動被載入。
+
+可用的 Skill 如下：
+
+- ``translate-po``\ ：將 po 檔中尚未翻譯的條目由英文翻譯為臺灣繁體中文，並\
+  遵循本專案的翻譯慣例。
+- ``check-terminology``\ ：檢查用詞是否與術語表一致，並找出需要轉換為臺灣繁體\
+  中文的中國大陸用語。
+- ``validate-translation``\ ：審閱已翻譯的條目，檢查用詞、標點、reST 語法與行\
+  寬等問題。
+
+事前準備
+--------
+
+- 安裝 `Claude Code <https://docs.anthropic.com/en/docs/claude-code>`_\ 。
+- 將本專案 clone 到本機，並切換到對應的版本 branch（例如 ``3.14``\ ）。
+- 在專案根目錄底下啟動 Claude Code，Skill 才會被正確載入。
+
+使用方式與範例
+--------------
+
+在 Claude Code 的對話中，以自然語言請它使用對應的 Skill 並指定要處理的 po
+檔即可。以下示範如何翻譯 ``tutorial/introduction.po``\ ，並校對翻譯結果。
+
+**第一步：翻譯**
+
+對 Claude Code 輸入類似以下的指示：
+
+.. code-block:: text
+
+  請使用 translate-po skill 翻譯 tutorial/introduction.po 中尚未翻譯的條目
+
+Skill 會找出 ``msgstr`` 為空或標記為 fuzzy 的條目，並依照翻譯守則填入譯文。
+例如翻譯前：
+
+.. code-block:: po
+
+  #: ../../tutorial/introduction.rst:5
+  msgid "An Informal Introduction to Python"
+  msgstr ""
+
+翻譯後（中英文之間會加入空白，專有名詞 ``Python`` 維持英文）：
+
+.. code-block:: po
+
+  #: ../../tutorial/introduction.rst:5
+  msgid "An Informal Introduction to Python"
+  msgstr "一個非正式的 Python 簡介"
+
+**第二步：校對**
+
+接著請 Claude Code 使用 ``validate-translation`` 校對剛才的譯文：
+
+.. code-block:: text
+
+  請使用 validate-translation skill 檢查 tutorial/introduction.po
+
+Skill 會將發現的問題分類為 ERROR、WARNING、INFO 並逐項列出，例如建議執行
+``make lint`` 確認格式。你也可以使用 ``check-terminology`` 單獨檢查某個用詞，\
+或整份 po 檔的術語一致性。
+
+.. note::
+
+  Skill 產生的譯文僅供輔助，送出 Pull Request 前請務必人工確認每一條翻譯是否\
+  正確、是否符合\ `翻譯守則`_\ 。
+
 術語表 Glossary
 ===============
 
